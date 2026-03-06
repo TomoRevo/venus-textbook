@@ -98,7 +98,6 @@
     .pose-num-big { width:52px; height:52px; border-radius:50%; background:linear-gradient(135deg,var(--gold-light),var(--gold)); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
     .pose-num-big span { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; color:var(--white); }
     .pose-title-wrap h2 { font-family:'Noto Serif JP',serif; font-size:22px; font-weight:700; color:var(--dark); }
-    .pose-title-wrap p { font-size:11px; color:var(--light); margin-top:2px; }
     .pose-desc-box { background:var(--white); border-radius:10px; padding:14px 16px; margin-top:14px; border-left:3px solid var(--gold); font-size:13px; line-height:1.8; font-weight:300; color:var(--dark); }
 
     /* ── TOC ── */
@@ -114,42 +113,172 @@
     .bg-pink   { background:linear-gradient(170deg,#fff 0%,var(--pink-light) 100%); }
     .bg-warm   { background:linear-gradient(160deg,var(--beige) 0%,var(--beige-mid) 100%); }
 
-    /* ── Cover ── */
-    .cover-inner { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:50px 32px 30px; }
-    .cover-circle { width:100px; height:100px; border-radius:50%; border:1.5px solid var(--gold-light); background:rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; position:relative; margin-bottom:26px; }
-    .cover-circle::after { content:''; position:absolute; inset:6px; border-radius:50%; border:0.5px solid var(--gold-light); }
+    /* ── Cover (luxury) ── */
+    .cover-inner {
+      flex:1; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      text-align:center; padding:50px 32px 36px;
+      position:relative;
+    }
+    .cover-corner {
+      position:absolute; width:48px; height:48px;
+      border-color:var(--gold); border-style:solid; opacity:0.45;
+    }
+    .cover-corner.tl { top:18px; left:18px; border-width:1.5px 0 0 1.5px; }
+    .cover-corner.tr { top:18px; right:18px; border-width:1.5px 1.5px 0 0; }
+    .cover-corner.bl { bottom:18px; left:18px; border-width:0 0 1.5px 1.5px; }
+    .cover-corner.br { bottom:18px; right:18px; border-width:0 1.5px 1.5px 0; }
+    .cover-ornament { font-size:11px; letter-spacing:7px; color:var(--gold); margin-bottom:16px; opacity:0.75; }
+    .cover-circle { width:104px; height:104px; border-radius:50%; border:1.5px solid var(--gold-light); background:rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; position:relative; margin-bottom:24px; box-shadow:0 4px 20px rgba(201,166,112,0.18); }
+    .cover-circle::after { content:''; position:absolute; inset:7px; border-radius:50%; border:0.5px solid var(--gold-light); }
     .cover-org { font-family:'Noto Serif JP',serif; font-size:12px; color:var(--gold-dark); letter-spacing:3px; margin-bottom:8px; }
-    .cover-divider { width:50px; height:1px; background:var(--gold); margin:12px auto; }
+    .cover-divider { width:50px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:12px auto; }
     .cover-main-title { font-family:'Noto Serif JP',serif; font-size:27px; font-weight:700; color:var(--dark); line-height:1.5; }
     .cover-main-title .reg { font-size:14px; vertical-align:super; color:var(--gold-dark); }
     .cover-sub-title { font-family:'Noto Serif JP',serif; font-size:13px; color:var(--medium); margin-top:8px; letter-spacing:1px; }
-    .cover-badge { margin-top:28px; background:var(--gold); color:var(--white); font-family:'Noto Serif JP',serif; font-size:11px; letter-spacing:2px; padding:7px 24px; border-radius:2px; }
+    .cover-tagline { font-family:'Noto Serif JP',serif; font-size:11px; color:var(--light); margin-top:6px; letter-spacing:2px; font-style:italic; }
+    .cover-badge { margin-top:26px; background:linear-gradient(135deg,var(--gold-dark),var(--gold)); color:var(--white); font-family:'Noto Serif JP',serif; font-size:11px; letter-spacing:3px; padding:8px 28px; border-radius:2px; box-shadow:0 3px 12px rgba(158,123,66,0.3); }
+    .cover-deco { margin-top:20px; font-size:11px; letter-spacing:8px; color:var(--gold-light); }
 
     /* ── Promise ── */
     .promise-card { background:var(--white); border-radius:12px; padding:17px 20px; margin-bottom:13px; display:flex; align-items:center; gap:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
     .promise-num { width:44px; height:44px; border-radius:50%; background:linear-gradient(135deg,var(--gold-light),var(--gold)); display:flex; align-items:center; justify-content:center; font-family:'Noto Serif JP',serif; font-size:20px; font-weight:700; color:var(--white); flex-shrink:0; }
     .promise-text { font-family:'Noto Serif JP',serif; font-size:16px; font-weight:500; color:var(--dark); line-height:1.5; }
 
-    /* ── End ── */
-    .end-inner { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 30px; }
+    /* ── End (luxury) ── */
+    .end-inner { flex:1; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; padding:40px 30px; position:relative; }
     .end-message { font-family:'Noto Serif JP',serif; font-size:14.5px; color:var(--dark); line-height:2; margin:20px 0; }
-    .end-brand { font-family:'Noto Serif JP',serif; font-size:17px; font-weight:700; color:var(--gold-dark); margin-top:12px; letter-spacing:1px; }
+    .end-brand { font-family:'Noto Serif JP',serif; font-size:18px; font-weight:700; color:var(--gold-dark); margin-top:12px; letter-spacing:2px; }
+    .end-ornament { margin-top:22px; font-size:11px; letter-spacing:8px; color:var(--gold); opacity:0.7; }
+    .end-tagline { font-family:'Noto Serif JP',serif; font-size:11px; color:var(--light); margin-top:10px; font-style:italic; letter-spacing:1px; }
+
+    /* ── Hamburger menu ── */
+    .menu-btn {
+      position:fixed; top:14px; right:16px; z-index:300;
+      background:rgba(255,255,255,0.93); border:1px solid var(--gold-light);
+      border-radius:8px; width:40px; height:40px;
+      display:flex; flex-direction:column; align-items:center; justify-content:center; gap:5px;
+      cursor:pointer; box-shadow:0 2px 10px rgba(0,0,0,0.1);
+      -webkit-tap-highlight-color:transparent; padding:10px 8px;
+    }
+    .menu-btn-line { width:18px; height:1.5px; background:var(--gold-dark); border-radius:2px; display:block; }
+    .menu-overlay {
+      position:fixed; inset:0; z-index:400;
+      background:rgba(58,50,44,0.45);
+      display:none;
+    }
+    .menu-overlay.open { display:block; }
+    .menu-panel {
+      position:absolute; top:0; right:0;
+      width:78%; max-width:290px; height:100%;
+      background:linear-gradient(180deg,#FBF6EF 0%,#F5EFE6 100%);
+      overflow-y:auto; display:flex; flex-direction:column;
+      box-shadow:-6px 0 28px rgba(0,0,0,0.18);
+    }
+    .menu-head {
+      padding:22px 20px 14px;
+      border-bottom:1px solid var(--gold-light);
+      display:flex; justify-content:space-between; align-items:center;
+      background:linear-gradient(135deg,#FDF8F2,#F5EFE6);
+    }
+    .menu-head-title { font-family:'Noto Serif JP',serif; font-size:14px; font-weight:700; color:var(--gold-dark); letter-spacing:3px; }
+    .menu-close-btn {
+      background:none; border:none; cursor:pointer;
+      font-size:20px; color:var(--greige); line-height:1;
+      -webkit-tap-highlight-color:transparent;
+    }
+    .menu-section-label {
+      font-size:9px; letter-spacing:2px; color:var(--light);
+      padding:12px 20px 4px; display:block;
+      text-transform:uppercase; font-family:'Noto Sans JP',sans-serif;
+    }
+    .menu-link {
+      display:flex; align-items:center; gap:12px;
+      padding:12px 20px; border:none; background:none;
+      width:100%; text-align:left; cursor:pointer;
+      border-bottom:1px solid rgba(201,166,112,0.12);
+      -webkit-tap-highlight-color:transparent;
+    }
+    .menu-link:active { background:var(--beige-mid); }
+    .menu-link-num { font-size:10px; color:var(--gold-dark); min-width:36px; font-family:'Noto Serif JP',serif; flex-shrink:0; }
+    .menu-link-text { font-family:'Noto Serif JP',serif; font-size:13px; color:var(--dark); line-height:1.35; }
   </style>
 </head>
 <body>
 <div id="app">
+
+<!-- ハンバーガーメニューボタン -->
+<button class="menu-btn" id="menuBtn" onclick="toggleMenu()">
+  <span class="menu-btn-line"></span>
+  <span class="menu-btn-line"></span>
+  <span class="menu-btn-line"></span>
+</button>
+
+<!-- メニューオーバーレイ -->
+<div class="menu-overlay" id="menuOverlay" onclick="closeMenu()">
+  <div class="menu-panel" onclick="event.stopPropagation()">
+    <div class="menu-head">
+      <span class="menu-head-title">MENU</span>
+      <button class="menu-close-btn" onclick="closeMenu()">✕</button>
+    </div>
+
+    <span class="menu-section-label">はじめに</span>
+    <button class="menu-link" onclick="gotoSlide(0)"><span class="menu-link-num">表紙</span><span class="menu-link-text">ヴィーナス美顔ヨガ®</span></button>
+    <button class="menu-link" onclick="gotoSlide(1)"><span class="menu-link-num">目次</span><span class="menu-link-text">CONTENTS</span></button>
+
+    <span class="menu-section-label">第1章</span>
+    <button class="menu-link" onclick="gotoSlide(2)"><span class="menu-link-num">基本姿勢</span><span class="menu-link-text">美の土台となる正しい姿勢</span></button>
+
+    <span class="menu-section-label">第2章</span>
+    <button class="menu-link" onclick="gotoSlide(3)"><span class="menu-link-num">舌の位置</span><span class="menu-link-text">顔のたるみ予防</span></button>
+
+    <span class="menu-section-label">第3章</span>
+    <button class="menu-link" onclick="gotoSlide(4)"><span class="menu-link-num">概要</span><span class="menu-link-text">上半身のほぐし＆ストレッチ</span></button>
+    <button class="menu-link" onclick="gotoSlide(5)"><span class="menu-link-num">①〜⑦</span><span class="menu-link-text">上半身のほぐし ①</span></button>
+    <button class="menu-link" onclick="gotoSlide(6)"><span class="menu-link-num">⑧〜⑬</span><span class="menu-link-text">上半身のほぐし ②</span></button>
+
+    <span class="menu-section-label">第4章</span>
+    <button class="menu-link" onclick="gotoSlide(7)"><span class="menu-link-num">概要</span><span class="menu-link-text">お顔の筋膜ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(8)"><span class="menu-link-num">耳</span><span class="menu-link-text">耳ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(9)"><span class="menu-link-num">頭皮</span><span class="menu-link-text">頭皮ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(10)"><span class="menu-link-num">顔 ①</span><span class="menu-link-text">顔の各部位ほぐし ①</span></button>
+    <button class="menu-link" onclick="gotoSlide(11)"><span class="menu-link-num">顔 ②</span><span class="menu-link-text">顔の各部位ほぐし ②</span></button>
+
+    <span class="menu-section-label">第5章</span>
+    <button class="menu-link" onclick="gotoSlide(12)"><span class="menu-link-num">概要</span><span class="menu-link-text">ヴィーナス美顔ヨガ 基本ポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(13)"><span class="menu-link-num">① ア</span><span class="menu-link-text">アのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(14)"><span class="menu-link-num">② イ</span><span class="menu-link-text">イのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(15)"><span class="menu-link-num">③ ウ</span><span class="menu-link-text">ウのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(16)"><span class="menu-link-num">④ エ</span><span class="menu-link-text">エのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(17)"><span class="menu-link-num">⑤ オ</span><span class="menu-link-text">オのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(18)"><span class="menu-link-num">⑥ ヒ</span><span class="menu-link-text">ヒのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(19)"><span class="menu-link-num">⑦ 目元</span><span class="menu-link-text">目元パッチリポーズ</span></button>
+
+    <span class="menu-section-label">第7章</span>
+    <button class="menu-link" onclick="gotoSlide(20)"><span class="menu-link-num">約束</span><span class="menu-link-text">ヴィーナスの3つの約束</span></button>
+    <button class="menu-link" onclick="gotoSlide(21)" style="border-bottom:none"><span class="menu-link-num">おわり</span><span class="menu-link-text">メッセージ</span></button>
+  </div>
+</div>
+
 <div class="slides-area">
 
 <!-- ==================== SLIDE 1: 表紙 ==================== -->
 <div class="slide active bg-cover">
   <div class="slide-body">
     <div class="cover-inner">
+      <div class="cover-corner tl"></div>
+      <div class="cover-corner tr"></div>
+      <div class="cover-corner bl"></div>
+      <div class="cover-corner br"></div>
+      <div class="cover-ornament">— ✦ —</div>
       <div class="cover-circle"><span style="font-size:42px">🌸</span></div>
       <p class="cover-org">愛されヴィーナス塾</p>
       <div class="cover-divider"></div>
       <h1 class="cover-main-title">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
       <p class="cover-sub-title">講座テキスト</p>
+      <p class="cover-tagline">〜 美しさは、あなたの中に宿る 〜</p>
       <div class="cover-badge">VENUS BEAUTE</div>
+      <div class="cover-deco">✦ ✦ ✦</div>
     </div>
   </div>
   <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
@@ -181,8 +310,7 @@
 
       <div class="ba-wrap">
         <div class="ba-item">
-          <img src="images/img_01.jpg" alt="姿勢 BEFORE" class="full-img">
-          <span class="ba-tag start">BEFORE　崩れた姿勢</span>
+          <img src="images/img_01.jpg" alt="姿勢" class="full-img">
         </div>
         <div class="ba-arrow">
           <div class="ba-arrow-line"></div>
@@ -190,8 +318,7 @@
           <div class="ba-arrow-label">意識を変えると…</div>
         </div>
         <div class="ba-item">
-          <img src="images/img_02.jpg" alt="姿勢 AFTER" class="full-img">
-          <span class="ba-tag end">AFTER　正しい姿勢</span>
+          <img src="images/img_02.jpg" alt="姿勢" class="full-img">
         </div>
       </div>
 
@@ -218,8 +345,7 @@
 
       <div class="ba-wrap">
         <div class="ba-item">
-          <img src="images/img_03.jpg" alt="舌 NG" class="full-img">
-          <span class="ba-tag ng">NG　舌が下に落ちている</span>
+          <img src="images/img_03.jpg" alt="舌の位置" class="full-img">
         </div>
         <div class="ba-arrow">
           <div class="ba-arrow-line"></div>
@@ -227,8 +353,7 @@
           <div class="ba-arrow-label">正しい位置に変えると</div>
         </div>
         <div class="ba-item">
-          <img src="images/img_04.jpg" alt="舌 OK" class="full-img">
-          <span class="ba-tag ok">OK　舌全体を上あごにつける</span>
+          <img src="images/img_04.jpg" alt="舌の位置" class="full-img">
         </div>
       </div>
 
@@ -278,16 +403,16 @@
       <!-- ① -->
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">①</span><p class="ex-text">肩の高さを比較し、下がっている側をチェック</p></div>
-        <img src="images/img_07.jpg" alt="①" class="full-img">
+        <img src="images/img_09.jpg" alt="①" class="full-img">
       </div>
 
       <!-- ② -->
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">②</span><p class="ex-text">下がった側の脇を掴み、指先を肩に置いて大きく15回回す</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_09.jpg" alt="② スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_06.jpg" alt="② はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">15回</div></div>
-          <div class="ba-item"><img src="images/img_10.jpg" alt="② ゴール" class="full-img"><span class="ba-tag end">ゴール</span></div>
+          <div class="ba-item"><img src="images/img_08.jpg" alt="② おわり" class="full-img"></div>
         </div>
       </div>
 
@@ -295,9 +420,9 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">③</span><p class="ex-text">腕を後ろに組み、鼻から4秒吸いながら上げ、吐きながら下ろす（15回）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_11.jpg" alt="③ スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_11.jpg" alt="③ はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">4秒吸って吐く</div></div>
-          <div class="ba-item"><img src="images/img_12.jpg" alt="③ ゴール" class="full-img"><span class="ba-tag end">ゴール</span></div>
+          <div class="ba-item"><img src="images/img_12.jpg" alt="③ おわり" class="full-img"></div>
         </div>
       </div>
 
@@ -305,9 +430,9 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">④</span><p class="ex-text">胸の前で肘を水平に上げ、肩甲骨を寄せるように後ろへ15回引く</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_13.jpg" alt="④ スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_13.jpg" alt="④ はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">15回</div></div>
-          <div class="ba-item"><img src="images/img_14.jpg" alt="④ ゴール" class="full-img"><span class="ba-tag end">ゴール</span></div>
+          <div class="ba-item"><img src="images/img_14.jpg" alt="④ おわり" class="full-img"></div>
         </div>
       </div>
 
@@ -321,9 +446,9 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑥</span><p class="ex-text">下がった側の脇を掴み、肘を大きく15回回す</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_16.jpg" alt="⑥ スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_16.jpg" alt="⑥ はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">15回</div></div>
-          <div class="ba-item"><img src="images/img_17.jpg" alt="⑥ ゴール" class="full-img"><span class="ba-tag end">ゴール</span></div>
+          <div class="ba-item"><img src="images/img_17.jpg" alt="⑥ おわり" class="full-img"></div>
         </div>
       </div>
 
@@ -348,9 +473,9 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑧</span><p class="ex-text">熊手にして前鋸筋を掻き出すようにほぐす（10回）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_19.jpg" alt="⑧ スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_19.jpg" alt="⑧ はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">10回</div></div>
-          <div class="ba-item"><img src="images/img_20.jpg" alt="⑧ ゴール" class="full-img"><span class="ba-tag end">ゴール</span></div>
+          <div class="ba-item"><img src="images/img_20.jpg" alt="⑧ おわり" class="full-img"></div>
         </div>
       </div>
 
@@ -374,7 +499,7 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑪</span><p class="ex-text">鎖骨を3箇所、人差し指と中指で捉えてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_24.jpg" alt="⑪ スタート" class="full-img"><span class="ba-tag start">ポジション確認</span></div>
+          <div class="ba-item"><img src="images/img_24.jpg" alt="⑪ ポジション" class="full-img"><span class="ba-tag start">ポジション確認</span></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">各10秒</div></div>
           <div class="ba-item"><img src="images/img_25.jpg" alt="⑪ ほぐし" class="full-img"><span class="ba-tag end">3箇所ほぐす</span></div>
         </div>
@@ -384,9 +509,9 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑫</span><p class="ex-text">息を4秒吸いながら鎖骨下を固定し、吐きながら頭を後ろに倒す（3回）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_27.jpg" alt="⑫ スタート" class="full-img"><span class="ba-tag start">スタート</span></div>
+          <div class="ba-item"><img src="images/img_27.jpg" alt="⑫ はじめ" class="full-img"></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">3回繰り返す</div></div>
-          <div class="ba-item"><img src="images/img_28.jpg" alt="⑫ 倒す" class="full-img"><span class="ba-tag end">頭を後ろへ</span></div>
+          <div class="ba-item"><img src="images/img_28.jpg" alt="⑫ 頭を後ろへ" class="full-img"><span class="ba-tag end">頭を後ろへ</span></div>
         </div>
       </div>
 
@@ -394,7 +519,7 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑬</span><p class="ex-text">耳角を引っ張り胸鎖乳突筋を出し、耳下の付け根から3ヶ所を横に揺らしてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_29.jpg" alt="⑬ スタート" class="full-img"><span class="ba-tag start">筋肉を出す</span></div>
+          <div class="ba-item"><img src="images/img_29.jpg" alt="⑬ 筋肉を出す" class="full-img"><span class="ba-tag start">筋肉を出す</span></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">3箇所 各10秒</div></div>
           <div class="ba-item"><img src="images/img_30.jpg" alt="⑬ ほぐし" class="full-img"><span class="ba-tag end">横に揺らしてほぐす</span></div>
         </div>
@@ -441,9 +566,9 @@
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">お顔の筋膜ほぐし</span></div>
       <h2 class="slide-title">耳ほぐし</h2>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_35.jpg" alt="耳ほぐし スタート" class="full-img"><span class="ba-tag start">耳をつまむ</span></div>
+        <div class="ba-item"><img src="images/img_35.jpg" alt="耳ほぐし" class="full-img"><span class="ba-tag start">耳をつまむ</span></div>
         <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">上・横・下へ引っ張り回す</div></div>
-        <div class="ba-item"><img src="images/img_36.jpg" alt="耳ほぐし ゴール" class="full-img"><span class="ba-tag end">付け根をほぐす</span></div>
+        <div class="ba-item"><img src="images/img_36.jpg" alt="耳ほぐし" class="full-img"><span class="ba-tag end">付け根をほぐす</span></div>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">やり方</p>
@@ -467,9 +592,9 @@
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">お顔の筋膜ほぐし</span></div>
       <h2 class="slide-title">頭皮ほぐし</h2>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_39.jpg" alt="頭皮ほぐし スタート" class="full-img"><span class="ba-tag start">指をセット</span></div>
+        <div class="ba-item"><img src="images/img_39.jpg" alt="頭皮ほぐし" class="full-img"><span class="ba-tag start">指をセット</span></div>
         <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">頭皮ごと動かす</div></div>
-        <div class="ba-item"><img src="images/img_40.jpg" alt="頭皮ほぐし ゴール" class="full-img"><span class="ba-tag end">円を描いてほぐす</span></div>
+        <div class="ba-item"><img src="images/img_40.jpg" alt="頭皮ほぐし" class="full-img"><span class="ba-tag end">円を描いてほぐす</span></div>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">やり方</p>
@@ -509,16 +634,16 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑶</span><p class="ex-text">笑筋・頬筋をグーの平らな所で、口角の横から咬筋まで3ヶ所を小さく揺らしてほぐす</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_44.jpg" alt="⑶ スタート" class="full-img"><span class="ba-tag start">口角横から</span></div>
+          <div class="ba-item"><img src="images/img_44.jpg" alt="⑶ 口角横から" class="full-img"><span class="ba-tag start">口角横から</span></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">3箇所</div></div>
-          <div class="ba-item"><img src="images/img_45.jpg" alt="⑶ ゴール" class="full-img"><span class="ba-tag end">咬筋まで</span></div>
+          <div class="ba-item"><img src="images/img_45.jpg" alt="⑶ 咬筋まで" class="full-img"><span class="ba-tag end">咬筋まで</span></div>
         </div>
       </div>
 
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑷</span><p class="ex-text">上唇尾翼挙筋を鼻側面に中指側面を当てて、人差し指でVを作りながらほぐす（10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_46.jpg" alt="⑷ V字" class="full-img"><span class="ba-tag start">Vポジション</span></div>
+          <div class="ba-item"><img src="images/img_46.jpg" alt="⑷ Vポジション" class="full-img"><span class="ba-tag start">Vポジション</span></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">10秒ほぐす</div></div>
           <div class="ba-item"><img src="images/img_47.jpg" alt="⑷ ほぐし" class="full-img"><span class="ba-tag end">優しくほぐす</span></div>
         </div>
@@ -538,7 +663,7 @@
       <div class="ex-block">
         <div class="ex-header"><span class="n-badge">⑸</span><p class="ex-text">頬骨下を人差し指カギ型で4ヶ所、小さく微振動させてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/img_48.jpg" alt="⑸ スタート" class="full-img"><span class="ba-tag start">頬骨下に指を当てる</span></div>
+          <div class="ba-item"><img src="images/img_48.jpg" alt="⑸ 頬骨下" class="full-img"><span class="ba-tag start">頬骨下に指を当てる</span></div>
           <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">4箇所 各10秒</div></div>
           <div class="ba-item"><img src="images/img_49.jpg" alt="⑸ ほぐし" class="full-img"><span class="ba-tag end">微振動でほぐす</span></div>
         </div>
@@ -596,9 +721,9 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ①</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>ア</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">アのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ①</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">アのポーズ</h2></div>
       </div>
-      <img src="images/img_53.jpg" alt="アのポーズ" class="full-img">
+      <img src="images/img_57.jpg" alt="アのポーズ" class="full-img">
       <div class="pose-desc-box">人差し指と中指2本を縦に入れて口角を反対の指で軽くこめかみ方向に上げ、<strong>20〜30秒キープ</strong></div>
     </div>
   </div>
@@ -612,9 +737,9 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ②</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>イ</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">イのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ②</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">イのポーズ</h2></div>
       </div>
-      <img src="images/img_54.jpg" alt="イのポーズ" class="full-img">
+      <img src="images/img_53.jpg" alt="イのポーズ" class="full-img">
       <div class="pose-desc-box">人差し指を口角に置き、あごやお顔全体を脱力しながら横に引く。<strong>20〜30秒キープ</strong>（口角は歯に付かないよう注意）</div>
     </div>
   </div>
@@ -628,9 +753,9 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ③</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>ウ</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">ウのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ③</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">ウのポーズ</h2></div>
       </div>
-      <img src="images/img_55.jpg" alt="ウのポーズ" class="full-img">
+      <img src="images/img_56.jpg" alt="ウのポーズ" class="full-img">
       <div class="pose-desc-box">ろうそくを吹き消すようなチューの口を作り、小指1本入るくらい開けながら口角を寄せるように丸い形で<strong>20〜30秒キープ</strong></div>
     </div>
   </div>
@@ -644,13 +769,9 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ④</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>エ</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">エのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ④</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">エのポーズ</h2></div>
       </div>
-      <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_56.jpg" alt="エ スタート" class="full-img"><span class="ba-tag start">息を4秒吸う</span></div>
-        <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">吐きながら</div></div>
-        <div class="ba-item"><img src="images/img_57.jpg" alt="エ ゴール" class="full-img"><span class="ba-tag end">舌を下に伸ばす</span></div>
-      </div>
+      <img src="images/img_55.jpg" alt="エのポーズ" class="full-img">
       <div class="pose-desc-box">息を4秒吸って、吐きながら舌を脱力しながら下に伸ばす。<strong>3回繰り返す</strong></div>
     </div>
   </div>
@@ -664,7 +785,7 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ⑤</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>オ</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">オのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ⑤</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">オのポーズ</h2></div>
       </div>
       <img src="images/img_58.jpg" alt="オのポーズ" class="full-img">
       <div class="pose-desc-box">息を吸って鼻の下を伸ばしながら口を楕円形に縦に伸ばし、目線は上を見ながら息を吐く。<strong>3回繰り返す</strong></div>
@@ -680,12 +801,12 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ⑥</span></div>
       <div class="pose-header">
         <div class="pose-num-big"><span>ヒ</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">ヒのポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ⑥</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:22px;font-weight:700;">ヒのポーズ</h2></div>
       </div>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_59.jpg" alt="ヒ スタート" class="full-img"><span class="ba-tag start">口を少し開ける</span></div>
+        <div class="ba-item"><img src="images/img_59.jpg" alt="ヒ はじめ" class="full-img"></div>
         <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">口角を目尻方向へ</div></div>
-        <div class="ba-item"><img src="images/img_60.jpg" alt="ヒ キープ" class="full-img"><span class="ba-tag end">頬が上がる意識でキープ</span></div>
+        <div class="ba-item"><img src="images/img_60.jpg" alt="ヒ キープ" class="full-img"></div>
       </div>
       <div class="pose-desc-box">人差し指1本分口を開け、反対の手で口角を目尻側に上げ、頬が上がる意識で<strong>20〜30秒キープ</strong></div>
     </div>
@@ -700,12 +821,12 @@
       <div class="chapter-badge"><span class="chapter-num">第5章</span><span class="chapter-label">基本ポーズ ⑦</span></div>
       <div class="pose-header">
         <div class="pose-num-big" style="width:52px;height:52px;font-size:13px;"><span style="font-size:13px;letter-spacing:-0.5px;">目元</span></div>
-        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;">目元パッチリポーズ</h2><p style="font-size:11px;color:var(--light);margin-top:2px;">POSE ⑦</p></div>
+        <div class="pose-title-wrap"><h2 style="font-family:'Noto Serif JP',serif;font-size:20px;font-weight:700;">目元パッチリポーズ</h2></div>
       </div>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_61.jpg" alt="目元 スタート" class="full-img"><span class="ba-tag start">眉毛を固定・薄目</span></div>
+        <div class="ba-item"><img src="images/img_61.jpg" alt="目元 はじめ" class="full-img"></div>
         <div class="ba-arrow"><div class="ba-arrow-line"></div><div class="ba-arrow-head">▼</div><div class="ba-arrow-label">力を入れて閉じ→パチッと開く</div></div>
-        <div class="ba-item"><img src="images/img_62.jpg" alt="目元 ゴール" class="full-img"><span class="ba-tag end">上まぶたを意識して開く</span></div>
+        <div class="ba-item"><img src="images/img_62.jpg" alt="目元 おわり" class="full-img"></div>
       </div>
       <div class="pose-desc-box">眉毛が動かないように固定して薄目をし、力を入れながら閉じる。パチッと上まぶたに意識して開く動作を<strong>20〜30秒繰り返す</strong></div>
     </div>
@@ -729,15 +850,21 @@
 </div>
 
 <!-- ==================== SLIDE 22: エンド ==================== -->
-<div class="slide bg-warm">
+<div class="slide bg-cover">
   <div class="slide-body">
     <div class="end-inner">
-      <div class="cover-circle" style="margin-bottom:24px;border-color:var(--gold)"><span style="font-size:42px">🌸</span></div>
-      <p class="cover-org" style="font-size:13px;letter-spacing:2px">愛されヴィーナス塾</p>
+      <div class="cover-corner tl"></div>
+      <div class="cover-corner tr"></div>
+      <div class="cover-corner bl"></div>
+      <div class="cover-corner br"></div>
+      <div class="cover-ornament" style="margin-bottom:20px;">— ✦ —</div>
+      <div class="cover-circle" style="margin-bottom:22px;"><span style="font-size:42px">🌸</span></div>
+      <p class="cover-org">愛されヴィーナス塾</p>
       <div class="cover-divider"></div>
       <p class="end-message">今日もレッスンお疲れさまでした。<br>毎日の積み重ねが<br>あなたの美しさをつくります。</p>
       <p class="end-brand">Venus beaute</p>
-      <div style="margin-top:24px;font-size:20px;letter-spacing:6px;color:var(--gold)">✦ ✦ ✦</div>
+      <div class="end-ornament">✦ ✦ ✦</div>
+      <p class="end-tagline">〜 美しさは、あなたの中に宿る 〜</p>
     </div>
   </div>
   <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
@@ -777,6 +904,22 @@
     if (body) body.scrollTop = 0;
     updateNav();
   }
+  function gotoSlide(index) {
+    if (index < 0 || index >= total) return;
+    slides[current].classList.remove('active');
+    current = index;
+    slides[current].classList.add('active');
+    const body = slides[current].querySelector('.slide-body');
+    if (body) body.scrollTop = 0;
+    updateNav();
+    closeMenu();
+  }
+  function toggleMenu() {
+    document.getElementById('menuOverlay').classList.toggle('open');
+  }
+  function closeMenu() {
+    document.getElementById('menuOverlay').classList.remove('open');
+  }
   let tx = 0, ty = 0;
   document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; ty = e.touches[0].clientY; }, {passive:true});
   document.addEventListener('touchend', e => {
@@ -787,6 +930,7 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') changeSlide(1);
     if (e.key === 'ArrowLeft'  || e.key === 'ArrowUp')   changeSlide(-1);
+    if (e.key === 'Escape') closeMenu();
   });
   updateNav();
 </script>
