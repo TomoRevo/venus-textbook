@@ -22,15 +22,42 @@
     .slide.active { opacity:1; pointer-events:all; }
     .slide-body { flex:1; overflow-y:auto; -webkit-overflow-scrolling:touch; scrollbar-width:none; }
     .slide-body::-webkit-scrollbar { display:none; }
-    .slide-footer { flex-shrink:0; background:rgba(237,228,215,0.95); border-top:1px solid var(--beige-dark); padding:6px 16px; display:flex; justify-content:space-between; align-items:center; }
+    .slide-footer { flex-shrink:0; background:rgba(237,228,215,0.95); border-top:1px solid var(--beige-dark); padding:6px 16px; display:none; justify-content:space-between; align-items:center; }
+    .slide.active > .slide-footer { display:flex; }
     .copyright-text { font-size:9px; color:var(--light); letter-spacing:0.3px; }
-    .nav-bar { flex-shrink:0; background:var(--white); border-top:1px solid var(--greige-light); padding:10px 28px 16px; display:flex; justify-content:space-between; align-items:center; }
+    .nav-bar { flex-shrink:0; background:var(--white); border-top:1px solid var(--greige-light); padding:10px 20px 16px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
     .nav-btn { background:none; border:1.5px solid var(--gold); border-radius:50%; width:42px; height:42px; display:flex; align-items:center; justify-content:center; cursor:pointer; color:var(--gold-dark); font-size:22px; -webkit-tap-highlight-color:transparent; }
     .nav-btn:active { background:var(--gold-light); }
     .nav-btn:disabled { opacity:0.25; cursor:default; }
-    .slide-dots { display:flex; gap:5px; flex-wrap:wrap; justify-content:center; max-width:180px; }
-    .dot { width:6px; height:6px; border-radius:50%; background:var(--greige-light); transition:background 0.3s,transform 0.3s; }
-    .dot.active { background:var(--gold); transform:scale(1.2); }
+    .nav-progress {
+      flex:1;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      gap:4px;
+      min-width:0;
+    }
+    .progress-track {
+      width:100%;
+      max-width:260px;
+      height:4px;
+      border-radius:999px;
+      background:var(--greige-light);
+      overflow:hidden;
+    }
+    .progress-bar {
+      height:100%;
+      width:0%;
+      border-radius:999px;
+      background:linear-gradient(90deg,var(--gold-light),var(--gold));
+      transition:width 0.3s ease;
+    }
+    .progress-text {
+      font-size:10px;
+      letter-spacing:1px;
+      color:var(--light);
+      font-family:'Noto Sans JP',sans-serif;
+    }
 
     /* ── Layout ── */
     .content-pad { padding:32px 22px 30px; }
@@ -45,9 +72,33 @@
     .card-pink { border-left-color:var(--pink); background:var(--pink-light); }
     .card-title-pink { color:var(--pink); }
 
-    .b-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
-    .b-list li { display:flex; align-items:flex-start; gap:10px; font-size:13px; line-height:1.65; font-weight:300; }
-    .b-list li::before { content:'◆'; color:var(--gold); font-size:7px; margin-top:5px; flex-shrink:0; }
+    .b-list {
+      list-style:none;
+      display:block;
+      margin:0;
+      padding:0;
+    }
+    .b-list li {
+      position:relative;
+      padding-left:16px;
+      font-size:13px;
+      line-height:1.65;
+      font-weight:300;
+      margin-bottom:8px;
+    }
+    .b-list li::before {
+      content:'◆';
+      position:absolute;
+      left:0;
+      top:0.8em;
+      transform:translateY(-50%);
+      color:var(--gold);
+      font-size:7px;
+    }
+    .no-wrap { white-space:nowrap; }
+    .text-gold { color:var(--gold-dark); }
+    .text-accent-gold { color:var(--gold); }
+    .text-danger { color:#c05050; }
 
     .n-list { list-style:none; display:flex; flex-direction:column; gap:8px; }
     .n-list li { display:flex; align-items:flex-start; gap:9px; font-size:12px; line-height:1.65; font-weight:300; }
@@ -63,21 +114,21 @@
     .tag { background:var(--pink-light); border:1px solid var(--pink); border-radius:20px; padding:3px 12px; font-size:11px; color:var(--pink); }
 
     /* ── Full-width image ── */
-    .full-img { width:100%; height:auto; display:block; border-radius:8px; }
+    .full-img { width:100%; height:auto; display:block; border-radius:8px; max-height:60vh; object-fit:contain; }
+    .ba-wrap .full-img { max-height:48vh; }
 
     /* ── Before / After ── */
-    .ba-wrap { margin:16px 0; }
-    .ba-item { position:relative; }
-    .ba-tag {
-      position:absolute; top:10px; left:10px;
-      padding:5px 14px; border-radius:4px;
-      font-size:11px; font-weight:500; letter-spacing:0.5px;
-      font-family:'Noto Sans JP',sans-serif; z-index:2;
+    .ba-wrap { margin:16px 0; display:flex; flex-direction:column; gap:12px; }
+    .ba-item { display:flex; flex-direction:column; gap:8px; align-items:center; }
+    .ba-caption {
+      padding:2px 10px;
+      font-size:11px;
+      font-weight:500;
+      letter-spacing:0.5px;
+      font-family:'Noto Sans JP',sans-serif;
+      color:var(--gold-dark);
+      text-align:center;
     }
-    .ba-tag.start { background:rgba(150,138,130,0.88); color:#fff; }
-    .ba-tag.end   { background:rgba(172,126,50,0.92);  color:#fff; }
-    .ba-tag.ng    { background:rgba(180,70,70,0.88);   color:#fff; }
-    .ba-tag.ok    { background:rgba(120,155,90,0.88);  color:#fff; }
 
 
     /* ── Exercise block (ch3/ch4 scrollable) ── */
@@ -115,10 +166,25 @@
       text-align:center; padding:40px 28px 32px;
     }
     .section-cover-label {
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
       font-family:'Noto Serif JP',serif;
       font-size:11px; letter-spacing:6px;
       color:rgba(200,155,111,0.7);
       margin-bottom:24px;
+      text-align:center;
+      white-space:nowrap;
+    }
+    .section-cover-label-jp { white-space:nowrap; }
+    .section-cover-label-en { white-space:nowrap; }
+    @media (max-width: 480px) {
+      .section-cover-label {
+        flex-direction:column;
+        gap:4px;
+        white-space:normal;
+      }
     }
     .section-cover-line {
       width:48px; height:1px;
@@ -148,6 +214,25 @@
       color:rgba(245,239,230,0.85);
       line-height:2;
       font-weight:300;
+    }
+    .cover-points {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:center;
+      gap:8px;
+      margin-top:12px;
+    }
+    .cover-point {
+      min-width:88px;
+      padding:5px 10px;
+      border-radius:999px;
+      font-size:10px;
+      letter-spacing:1px;
+      border:1px solid rgba(250,240,225,0.55);
+      color:rgba(245,239,230,0.9);
+      background:rgba(0,0,0,0.06);
+      text-align:center;
+      backdrop-filter:blur(2px);
     }
     .section-cover-badge {
       display:inline-block;
@@ -367,7 +452,7 @@
     <button class="menu-link" onclick="gotoSlide(5)"><span class="menu-link-num">第3章</span><span class="menu-link-text">ゆるめる × 整える × 鍛える</span></button>
     <button class="menu-link" onclick="gotoSlide(6)"><span class="menu-link-num">第4章</span><span class="menu-link-text">変化が起こる理由</span></button>
     <button class="menu-link" onclick="gotoSlide(7)"><span class="menu-link-num">第5章</span><span class="menu-link-text">心とお顔の関係</span></button>
-    <button class="menu-link" onclick="gotoSlide(8)"><span class="menu-link-num">第6章</span><span class="menu-link-text">三つの約束（概要）</span></button>
+    <button class="menu-link" onclick="gotoSlide(8)"><span class="menu-link-num">第6章</span><span class="menu-link-text">三つの約束</span></button>
     <button class="menu-link" onclick="gotoSlide(9)"><span class="menu-link-num">第6章①</span><span class="menu-link-text">継続すること</span></button>
     <button class="menu-link" onclick="gotoSlide(10)"><span class="menu-link-num">第6章②</span><span class="menu-link-text">自己流でやらないこと</span></button>
     <button class="menu-link" onclick="gotoSlide(11)"><span class="menu-link-num">第6章③</span><span class="menu-link-text">自分を愛し、褒めること</span></button>
@@ -461,7 +546,7 @@
 <div class="slide bg-theory">
   <div class="slide-body">
     <div class="section-cover-inner">
-      <p class="section-cover-label">愛されヴィーナス塾 ✦ VENUS BEAUTE</p>
+      <p class="section-cover-label"><span class="section-cover-label-jp">愛されヴィーナス塾</span><span class="section-cover-label-en">VENUS BEAUTE</span></p>
       <div class="section-cover-line"></div>
       <h1 class="section-cover-title">理論編</h1>
       <p class="section-cover-sub">Official Theory Book</p>
@@ -470,6 +555,11 @@
         表情筋・心・習慣の理論を学んで<br>
         内側から輝く美しさを手に入れる
       </p>
+      <div class="cover-points">
+        <div class="cover-point">表情筋のしくみ</div>
+        <div class="cover-point">心と習慣の関係</div>
+        <div class="cover-point">変化が起こる理由</div>
+      </div>
       <div class="section-cover-badge">第1章 〜 第6章</div>
       <p class="section-cover-deco">✦ ✦ ✦</p>
     </div>
@@ -486,15 +576,15 @@
       <div class="card">
         <p class="card-title">表情筋の特徴</p>
         <ul class="b-list">
-          <li>全身に<strong>約600種類</strong>の筋肉があり、表情筋はその一部</li>
-          <li>顔には<strong>30種類以上</strong>の表情筋がある</li>
-          <li>一般的な筋肉は骨と骨をつなぐが、<strong>表情筋は皮膚についている</strong></li>
+          <li>全身に<strong class="text-gold">約600種類</strong>の筋肉があり、表情筋はその一部</li>
+          <li>顔には<strong class="text-gold">30種類以上</strong>の表情筋がある</li>
+          <li>一般的な筋肉は骨と骨をつなぐが、<strong class="text-gold">表情筋は皮膚についている</strong></li>
         </ul>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">なぜケアが必要なのか</p>
         <ul class="b-list">
-          <li>骨でなく皮膚についているため、<strong>たるみやすく、崩れやすい</strong></li>
+          <li>骨でなく皮膚についているため、<strong class="text-gold">たるみやすく、崩れやすい</strong></li>
           <li>正しい方法でゆるめ・目覚めさせ・鍛えることが大切</li>
           <li>間違ったケアは逆効果になることも</li>
         </ul>
@@ -516,8 +606,8 @@
       <div class="card">
         <p class="card-title">全身でつながるメソッド</p>
         <ul class="b-list">
-          <li>顔の表情筋は<strong>頭皮・首・鎖骨・肩・胸</strong>とつながっている</li>
-          <li>顔だけでなく<strong>上半身全体</strong>からアプローチ</li>
+          <li>顔の表情筋は<strong class="text-gold">頭皮・首・鎖骨・肩・胸</strong>とつながっている</li>
+          <li>顔だけでなく<strong class="text-gold">上半身全体</strong>からアプローチ</li>
         </ul>
       </div>
       <div class="card" style="margin-top:14px;">
@@ -560,7 +650,7 @@
           <p style="font-size:13px;color:var(--brown-dark);line-height:1.8;">左右のバランスを整え、歪みをリセット。<br>本来の骨格・筋肉の位置に戻す。</p>
         </div>
         <div class="card">
-          <p class="card-title" style="color:#8B7355;">💪 鍛える</p>
+          <p class="card-title" style="color:#8B7355;">✨ 鍛える</p>
           <p style="font-size:13px;color:var(--brown-dark);line-height:1.8;">正しい方法で表情筋を目覚めさせ、<br>引き上げる力を育てる。</p>
         </div>
       </div>
@@ -612,15 +702,15 @@
         <p class="card-title">心が下を向くと、顔も下を向く</p>
         <ul class="b-list">
           <li>気持ちが落ちると表情も落ちる</li>
-          <li>下を向く習慣が<strong>顔の下垂</strong>につながる</li>
+          <li>下を向く習慣が<strong class="text-gold">顔の下垂</strong>につながる</li>
           <li>感情・姿勢・表情は密接につながっている</li>
         </ul>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">ヴィーナス美顔ヨガの理念</p>
         <ul class="b-list">
-          <li><strong>自分を褒めること・愛すること</strong>が美の根本</li>
-          <li>顔を上げることは、<strong>自分を大切にすること</strong></li>
+          <li><strong class="text-gold">自分を褒めること・愛すること</strong>が美の根本</li>
+          <li>顔を上げることは、<strong class="text-gold">自分を大切にすること</strong></li>
           <li>内側の変化が外側の変化を生む</li>
         </ul>
       </div>
@@ -685,7 +775,7 @@
       <div class="card">
         <ul class="b-list">
           <li>毎日完璧にやる必要はない</li>
-          <li><strong>1日5分でも続けること</strong>に意味がある</li>
+          <li><strong class="text-gold">1日5分でも続けること</strong>に意味がある</li>
           <li>変化はある日突然、気づくようにやってくる</li>
           <li>「続けてきた自分」が一番の財産になる</li>
         </ul>
@@ -705,17 +795,17 @@
       <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第6章②</span><span class="chapter-label">三つの約束</span></div>
       <h2 class="slide-title">自己流でやらないこと</h2>
       <div class="card" style="border-left:3px solid #e07070;margin-bottom:12px;">
-        <p class="card-title" style="color:#c05050;">⚠ 自己流のリスク</p>
+        <p class="card-title text-danger">⚠ 自己流のリスク</p>
         <ul class="b-list">
-          <li>間違った力のかけ方でシワが<strong>深くなる</strong>ことがある</li>
+          <li>間違った力のかけ方でシワが<strong class="text-danger">深くなる</strong>ことがある</li>
           <li>効果がないだけでなく、逆効果になる可能性</li>
           <li>「なんとなく知っている」は危険</li>
         </ul>
       </div>
       <div class="card">
-        <p class="card-title">正しく学ぶ理由</p>
+        <p class="card-title text-gold">正しく学ぶ理由</p>
         <ul class="b-list">
-          <li>約20ポーズには<strong>設計された順番</strong>がある</li>
+          <li>約20ポーズには<strong class="text-gold">設計された順番</strong>がある</li>
           <li>ゆるめてから鍛える、という流れが重要</li>
           <li>講師と一緒に、正しいフォームを身につける</li>
         </ul>
@@ -739,10 +829,10 @@
       </div>
       <div class="card">
         <ul class="b-list">
-          <li>鏡を見るとき、<strong>いいところを探す習慣</strong>をつける</li>
+          <li>鏡を見るとき、<strong class="text-accent-gold">いいところを探す習慣</strong>をつける</li>
           <li>昨日より少し顔が上がった、それでいい</li>
           <li>自分を褒めると、表情が自然と明るくなる</li>
-          <li>お顔を上げることは、<strong>自分を大切にすること</strong></li>
+          <li>お顔を上げることは、<strong class="text-accent-gold">自分を大切にすること</strong></li>
         </ul>
       </div>
       <div style="margin-top:16px;background:var(--greige);border-radius:10px;padding:14px 16px;text-align:center;">
@@ -757,7 +847,7 @@
 <div class="slide bg-practice">
   <div class="slide-body">
     <div class="section-cover-inner">
-      <p class="section-cover-label">愛されヴィーナス塾 ✦ VENUS BEAUTE</p>
+      <p class="section-cover-label"><span class="section-cover-label-jp">愛されヴィーナス塾</span><span class="section-cover-label-en">VENUS BEAUTE</span></p>
       <div class="section-cover-line" style="background:linear-gradient(90deg,transparent,#8aafc0,transparent);"></div>
       <h1 class="section-cover-title" style="color:#E8F4F8;">実践編</h1>
       <p class="section-cover-sub" style="color:rgba(180,210,225,0.75);">Practice Session</p>
@@ -766,7 +856,12 @@
         約20ポーズで、<br>
         お顔の本来の力を引き出す。
       </p>
-      <div class="section-cover-badge" style="border-color:rgba(138,175,192,0.45);color:rgba(138,175,192,0.85);">第1章 〜 第5章 ＋ 約束</div>
+      <div class="cover-points">
+        <div class="cover-point">ゆるめる</div>
+        <div class="cover-point">整える</div>
+        <div class="cover-point">鍛える</div>
+      </div>
+      <div class="section-cover-badge" style="border-color:rgba(138,175,192,0.45);color:rgba(138,175,192,0.85);">第1章 〜 第5章</div>
       <p class="section-cover-deco">✦ ✦ ✦</p>
     </div>
   </div>
@@ -783,7 +878,6 @@
       <div class="ba-wrap">
         <div class="ba-item">
           <img src="images/基本姿勢1.jpg" alt="姿勢" class="full-img">
-        </div>
         </div>
         <div class="ba-item">
           <img src="images/基本姿勢2.jpg" alt="姿勢" class="full-img">
@@ -814,7 +908,6 @@
       <div class="ba-wrap">
         <div class="ba-item">
           <img src="images/舌の正しい位置1.jpg" alt="舌の位置" class="full-img">
-        </div>
         </div>
         <div class="ba-item">
           <img src="images/舌の正しい位置2.jpg" alt="舌の位置" class="full-img">
@@ -866,64 +959,58 @@
 
       <!-- ① -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">①</span><p class="ex-text">肩の高さを比較し、下がっている側をチェック</p></div>
+        <div class="ex-header"><span class="n-badge">1</span><p class="ex-text">肩の高さを比較し、下がっている側をチェック</p></div>
         <img src="images/第3章(1).jpg" alt="①" class="full-img">
       </div>
 
       <!-- ② -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">②</span><p class="ex-text">下がった側の脇を掴み、指先を肩に置いて大きく15回回す</p></div>
+        <div class="ex-header"><span class="n-badge">2</span><p class="ex-text">下がった側の脇を掴み、指先を肩に置いて大きく15回回す</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(2)-1.jpg" alt="② step1" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(2)-2.jpg" alt="② step2" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(2)-3.jpg" alt="② step3" class="full-img"></div>
         </div>
       </div>
 
       <!-- ③ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">③</span><p class="ex-text">腕を後ろに組み、鼻から4秒吸いながら上げ、吐きながら下ろす（15回）</p></div>
+        <div class="ex-header"><span class="n-badge">3</span><p class="ex-text">腕を後ろに組み、鼻から4秒吸いながら上げ、吐きながら下ろす（15回）</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(3)-1.jpg" alt="③ はじめ" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(3)-2.jpg" alt="③ おわり" class="full-img"></div>
         </div>
       </div>
 
       <!-- ④ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">④</span><p class="ex-text">胸の前で肘を水平に上げ、肩甲骨を寄せるように後ろへ15回引く</p></div>
+        <div class="ex-header"><span class="n-badge">4</span><p class="ex-text">胸の前で肘を水平に上げ、肩甲骨を寄せるように後ろへ15回引く</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(4)-1.jpg" alt="④ はじめ" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(4)-2.jpg" alt="④ おわり" class="full-img"></div>
         </div>
       </div>
 
       <!-- ⑤ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑤</span><p class="ex-text">斜め45度に腕を上げ下ろし（15回）</p></div>
+        <div class="ex-header"><span class="n-badge">5</span><p class="ex-text">斜め45度に腕を上げ下ろし（15回）</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(5)-1.jpg" alt="⑤ はじめ" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(5)-2.jpg" alt="⑤ おわり" class="full-img"></div>
         </div>
       </div>
 
       <!-- ⑥ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑥</span><p class="ex-text">下がった側の脇を掴み、肘を大きく15回回す</p></div>
+        <div class="ex-header"><span class="n-badge">6</span><p class="ex-text">下がった側の脇を掴み、肘を大きく15回回す</p></div>
         <img src="images/第3章(6).jpg" alt="⑥" class="full-img">
       </div>
 
       <!-- ⑦ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑦</span><p class="ex-text">親指を脇のくぼみ、4指を肩甲骨外側に置き、後ろに15回回す</p></div>
+        <div class="ex-header"><span class="n-badge">7</span><p class="ex-text">親指を脇のくぼみ、4指を肩甲骨外側に置き、後ろに15回回す</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(7)-1.jpg" alt="⑦ はじめ" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(7)-2.jpg" alt="⑦ おわり" class="full-img"></div>
         </div>
       </div>
@@ -941,57 +1028,51 @@
 
       <!-- ⑧ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑧</span><p class="ex-text">熊手にして前鋸筋を掻き出すようにほぐす（10回）</p></div>
+        <div class="ex-header"><span class="n-badge">8</span><p class="ex-text">熊手にして前鋸筋を掻き出すようにほぐす（10回）</p></div>
         <img src="images/第3章(8).jpg" alt="⑧" class="full-img">
       </div>
 
       <!-- ⑨ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑨</span><p class="ex-text">頭の後ろで肘を持ち、鼻から4秒吸って脇を伸ばしながら息を吐く（3回）</p></div>
+        <div class="ex-header"><span class="n-badge">9</span><p class="ex-text">頭の後ろで肘を持ち、鼻から4秒吸って脇を伸ばしながら息を吐く（3回）</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(9)-1.jpg" alt="⑨ はじめ" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(9)-2.jpg" alt="⑨ おわり" class="full-img"></div>
         </div>
       </div>
 
       <!-- ⑩ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑩</span><p class="ex-text">両手重ねて鎖骨下の大胸筋を横に10回、上下に10回ほぐす</p></div>
+        <div class="ex-header"><span class="n-badge">10</span><p class="ex-text">両手重ねて鎖骨下の大胸筋を横に10回、上下に10回ほぐす</p></div>
         <img src="images/第3章(10).jpg" alt="⑩" class="full-img">
       </div>
 
       <!-- ⑪ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑪</span><p class="ex-text">鎖骨を3箇所、人差し指と中指で捉えてほぐす（各10秒）</p></div>
+        <div class="ex-header"><span class="n-badge">11</span><p class="ex-text">鎖骨を3箇所、人差し指と中指で捉えてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(11)-1.jpg" alt="⑪ step1" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(11)-2.jpg" alt="⑪ step2" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第3章(11)-3.jpg" alt="⑪ step3" class="full-img"></div>
         </div>
       </div>
 
       <!-- ⑫ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑫</span><p class="ex-text">息を4秒吸いながら鎖骨下を固定し、吐きながら頭を後ろに倒す（3回）</p></div>
+        <div class="ex-header"><span class="n-badge">12</span><p class="ex-text">息を4秒吸いながら鎖骨下を固定し、吐きながら頭を後ろに倒す（3回）</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第3章(12)-1.jpg" alt="⑫ はじめ" class="full-img"></div>
-</div>
-          <div class="ba-item"><img src="images/第3章(12)-2.jpg" alt="⑫ 頭を後ろへ" class="full-img"><span class="ba-tag end">頭を後ろへ</span></div>
+          <div class="ba-item"><img src="images/第3章(12)-2.jpg" alt="⑫ 頭を後ろへ" class="full-img"><div class="ba-caption">頭を後ろへ</div></div>
         </div>
       </div>
 
       <!-- ⑬ -->
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑬</span><p class="ex-text">耳角を引っ張り胸鎖乳突筋を出し、耳下の付け根から3ヶ所を横に揺らしてほぐす（各10秒）</p></div>
+        <div class="ex-header"><span class="n-badge">13</span><p class="ex-text">耳角を引っ張り胸鎖乳突筋を出し、耳下の付け根から3ヶ所を横に揺らしてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/第3章(13)-1.jpg" alt="⑬ step1" class="full-img"><span class="ba-tag start">筋肉を出す</span></div>
-</div>
+          <div class="ba-item"><img src="images/第3章(13)-1.jpg" alt="⑬ step1" class="full-img"><div class="ba-caption">筋肉を出す</div></div>
           <div class="ba-item"><img src="images/第3章(13)-2.jpg" alt="⑬ step2" class="full-img"></div>
-</div>
-          <div class="ba-item"><img src="images/第3章(13)-3.jpg" alt="⑬ step3" class="full-img"><span class="ba-tag end">横に揺らしてほぐす</span></div>
+          <div class="ba-item"><img src="images/第3章(13)-3.jpg" alt="⑬ step3" class="full-img"><div class="ba-caption">横に揺らしてほぐす</div></div>
         </div>
       </div>
     </div>
@@ -1006,9 +1087,8 @@
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">お顔の筋膜ほぐし</span></div>
       <h2 class="slide-title">お顔の筋膜ほぐし</h2>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_31.jpg" alt="筋膜ほぐし" class="full-img"><span class="ba-tag start">ほぐし前</span></div>
-</div>
-        <div class="ba-item"><img src="images/img_32.jpg" alt="筋膜ほぐし後" class="full-img"><span class="ba-tag end">ほぐし後</span></div>
+        <div class="ba-item"><img src="images/第4章(5)-1.jpg" alt="筋膜ほぐし step1" class="full-img"><div class="ba-caption">頬骨下に指を当てる</div></div>
+        <div class="ba-item"><img src="images/第4章(5)-4.jpg" alt="筋膜ほぐし step2" class="full-img"><div class="ba-caption">微振動でほぐす</div></div>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">目的・効果</p>
@@ -1036,9 +1116,8 @@
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">お顔の筋膜ほぐし</span></div>
       <h2 class="slide-title">耳ほぐし</h2>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_35.jpg" alt="耳ほぐし" class="full-img"><span class="ba-tag start">耳をつまむ</span></div>
-</div>
-        <div class="ba-item"><img src="images/img_36.jpg" alt="耳ほぐし" class="full-img"><span class="ba-tag end">付け根をほぐす</span></div>
+        <div class="ba-item"><img src="images/第4章(7)-1.jpg" alt="耳ほぐし step1" class="full-img"><div class="ba-caption">耳の付け根を捉える</div></div>
+        <div class="ba-item"><img src="images/第4章(7)-2.jpg" alt="耳ほぐし step2" class="full-img"><div class="ba-caption">回してほぐす</div></div>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">やり方</p>
@@ -1062,9 +1141,8 @@
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">お顔の筋膜ほぐし</span></div>
       <h2 class="slide-title">頭皮ほぐし</h2>
       <div class="ba-wrap">
-        <div class="ba-item"><img src="images/img_39.jpg" alt="頭皮ほぐし" class="full-img"><span class="ba-tag start">指をセット</span></div>
-</div>
-        <div class="ba-item"><img src="images/img_40.jpg" alt="頭皮ほぐし" class="full-img"><span class="ba-tag end">円を描いてほぐす</span></div>
+        <div class="ba-item"><img src="images/第4章(8)-1.jpg" alt="頭皮ほぐし step1" class="full-img"><div class="ba-caption">側頭筋を引き上げる</div></div>
+        <div class="ba-item"><img src="images/第4章(8)-3.jpg" alt="頭皮ほぐし step2" class="full-img"><div class="ba-caption">挟むようにほぐす</div></div>
       </div>
       <div class="card" style="margin-top:14px;">
         <p class="card-title">やり方</p>
@@ -1085,41 +1163,35 @@
   <div class="slide-body">
     <div class="content-pad">
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">顔の各部位ほぐし ①</span></div>
-      <h2 class="slide-title">顔の各部位ほぐし ①<br><span style="font-size:14px;font-weight:400;color:var(--medium);">⑴〜⑷</span></h2>
+      <h2 class="slide-title">顔の各部位ほぐし ①</h2>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑴</span><p class="ex-text">親指をカギ型にしてあご下へ。5ヶ所（真ん中・口角下制筋・顎の真ん中・エラ・内側翼突筋）を各10秒</p></div>
+        <div class="ex-header"><span class="n-badge">1</span><p class="ex-text">親指をカギ型にしてあご下へ。5ヶ所（真ん中・口角下制筋・顎の真ん中・エラ・内側翼突筋）を各10秒</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/第4章(1)-1.jpg" alt="⑴ step1" class="full-img"><span class="ba-tag start">ポジション確認</span></div>
-</div>
+          <div class="ba-item"><img src="images/第4章(1)-1.jpg" alt="⑴ step1" class="full-img"><div class="ba-caption">ポジション確認</div></div>
           <div class="ba-item"><img src="images/第4章(1)-2.jpg" alt="⑴ step2" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(1)-3.jpg" alt="⑴ step3" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(1)-4.jpg" alt="⑴ step4" class="full-img"></div>
-</div>
-          <div class="ba-item"><img src="images/第4章(1)-5.jpg" alt="⑴ step5" class="full-img"><span class="ba-tag end">骨を挟むようにほぐす</span></div>
+          <div class="ba-item"><img src="images/第4章(1)-5.jpg" alt="⑴ step5" class="full-img"><div class="ba-caption">骨を挟むようにほぐす</div></div>
         </div>
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑵</span><p class="ex-text">口角下制筋を人差し指カギ型でアゴ先に向かって小さく優しくほぐす（3ヶ所10秒ずつ）</p></div>
+        <div class="ex-header"><span class="n-badge">2</span><p class="ex-text">口角下制筋を人差し指カギ型でアゴ先に向かって小さく優しくほぐす（3ヶ所10秒ずつ）</p></div>
         <img src="images/第4章(2).jpg" alt="⑵" class="full-img">
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑶</span><p class="ex-text">笑筋・頬筋をグーの平らな所で、口角の横から咬筋まで3ヶ所を小さく揺らしてほぐす</p></div>
+        <div class="ex-header"><span class="n-badge">3</span><p class="ex-text">笑筋・頬筋をグーの平らな所で、口角の横から咬筋まで3ヶ所を小さく揺らしてほぐす</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/第4章(3)-1.jpg" alt="⑶ step1" class="full-img"><span class="ba-tag start">口角横から</span></div>
-</div>
+          <div class="ba-item"><img src="images/第4章(3)-1.jpg" alt="⑶ step1" class="full-img"><div class="ba-caption">口角横から</div></div>
           <div class="ba-item"><img src="images/第4章(3)-2.jpg" alt="⑶ step2" class="full-img"></div>
-</div>
-          <div class="ba-item"><img src="images/第4章(3)-3.jpg" alt="⑶ step3" class="full-img"><span class="ba-tag end">咬筋まで</span></div>
+          <div class="ba-item"><img src="images/第4章(3)-3.jpg" alt="⑶ step3" class="full-img"><div class="ba-caption">咬筋まで</div></div>
         </div>
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑷</span><p class="ex-text">上唇尾翼挙筋を鼻側面に中指側面を当てて、人差し指でVを作りながらほぐす（10秒）</p></div>
+        <div class="ex-header"><span class="n-badge">4</span><p class="ex-text">上唇尾翼挙筋を鼻側面に中指側面を当てて、人差し指でVを作りながらほぐす（10秒）</p></div>
         <img src="images/第4章(4).jpg" alt="⑷" class="full-img">
       </div>
     </div>
@@ -1132,46 +1204,39 @@
   <div class="slide-body">
     <div class="content-pad">
       <div class="chapter-badge"><span class="chapter-num">第4章</span><span class="chapter-label">顔の各部位ほぐし ②</span></div>
-      <h2 class="slide-title">顔の各部位ほぐし ②<br><span style="font-size:14px;font-weight:400;color:var(--medium);">⑸〜⑻</span></h2>
+      <h2 class="slide-title">顔の各部位ほぐし ②</h2>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑸</span><p class="ex-text">頬骨下を人差し指カギ型で4ヶ所、小さく微振動させてほぐす（各10秒）</p></div>
+        <div class="ex-header"><span class="n-badge">5</span><p class="ex-text">頬骨下を人差し指カギ型で4ヶ所、小さく微振動させてほぐす（各10秒）</p></div>
         <div class="ba-wrap">
-          <div class="ba-item"><img src="images/第4章(5)-1.jpg" alt="⑸ step1" class="full-img"><span class="ba-tag start">頬骨下に指を当てる</span></div>
-</div>
+          <div class="ba-item"><img src="images/第4章(5)-1.jpg" alt="⑸ step1" class="full-img"><div class="ba-caption">頬骨下に指を当てる</div></div>
           <div class="ba-item"><img src="images/第4章(5)-2.jpg" alt="⑸ step2" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(5)-3.jpg" alt="⑸ step3" class="full-img"></div>
-</div>
-          <div class="ba-item"><img src="images/第4章(5)-4.jpg" alt="⑸ step4" class="full-img"><span class="ba-tag end">微振動でほぐす</span></div>
+          <div class="ba-item"><img src="images/第4章(5)-4.jpg" alt="⑸ step4" class="full-img"><div class="ba-caption">微振動でほぐす</div></div>
         </div>
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑹</span><p class="ex-text">眼輪筋を4指で眼球の骨際に当てて優しくほぐし、眉下の骨に4指を当てて下から持ち上げるようにほぐす</p></div>
+        <div class="ex-header"><span class="n-badge">6</span><p class="ex-text">眼輪筋を4指で眼球の骨際に当てて優しくほぐし、眉下の骨に4指を当てて下から持ち上げるようにほぐす</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第4章(6)-1.jpg" alt="⑹ step1" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(6)-2.jpg" alt="⑹ step2" class="full-img"></div>
         </div>
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑺</span><p class="ex-text">チョキの指で耳の付け根を捉えて後ろ回し10回、その後上・横・下に引っ張り折りたたんで後ろに10回回す</p></div>
+        <div class="ex-header"><span class="n-badge">7</span><p class="ex-text">チョキの指で耳の付け根を捉えて後ろ回し10回、その後上・横・下に引っ張り折りたたんで後ろに10回回す</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第4章(7)-1.jpg" alt="⑺ step1" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(7)-2.jpg" alt="⑺ step2" class="full-img"></div>
         </div>
       </div>
 
       <div class="ex-block">
-        <div class="ex-header"><span class="n-badge">⑻</span><p class="ex-text">側頭筋を斜め上に頭皮を引き上げるようにほぐし、頭頂部の帽状腱膜を両手で挟むようにほぐす</p></div>
+        <div class="ex-header"><span class="n-badge">8</span><p class="ex-text">側頭筋を斜め上に頭皮を引き上げるようにほぐし、頭頂部の帽状腱膜を両手で挟むようにほぐす</p></div>
         <div class="ba-wrap">
           <div class="ba-item"><img src="images/第4章(8)-1.jpg" alt="⑻ step1" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(8)-2.jpg" alt="⑻ step2" class="full-img"></div>
-</div>
           <div class="ba-item"><img src="images/第4章(8)-3.jpg" alt="⑻ step3" class="full-img"></div>
         </div>
       </div>
@@ -1217,7 +1282,6 @@
       </div>
       <div class="ba-wrap">
         <div class="ba-item"><img src="images/第5章(1)-1.jpg" alt="アのポーズ step1" class="full-img"></div>
-</div>
         <div class="ba-item"><img src="images/第5章(1)-2.jpg" alt="アのポーズ step2" class="full-img"></div>
       </div>
       <div class="pose-desc-box">人差し指と中指2本を縦に入れて口角を反対の指で軽くこめかみ方向に上げ、<strong>20〜30秒キープ</strong></div>
@@ -1301,7 +1365,6 @@
       </div>
       <div class="ba-wrap">
         <div class="ba-item"><img src="images/第5章(6)-1.jpg" alt="ヒ はじめ" class="full-img"></div>
-</div>
         <div class="ba-item"><img src="images/第5章(6)-2.jpg" alt="ヒ キープ" class="full-img"></div>
       </div>
       <div class="pose-desc-box">人差し指1本分口を開け、反対の手で口角を目尻側に上げ、頬が上がる意識で<strong>20〜30秒キープ</strong></div>
@@ -1321,11 +1384,8 @@
       </div>
       <div class="ba-wrap">
         <div class="ba-item"><img src="images/第5章(8)-1.jpg" alt="目元 step1" class="full-img"></div>
-</div>
         <div class="ba-item"><img src="images/第5章(8)-2.jpg" alt="目元 step2" class="full-img"></div>
-</div>
         <div class="ba-item"><img src="images/第5章(8)-3.jpg" alt="目元 step3" class="full-img"></div>
-</div>
         <div class="ba-item"><img src="images/第5章(8)-4.jpg" alt="目元 step4" class="full-img"></div>
       </div>
       <div class="pose-desc-box">眉毛が動かないように固定して薄目をし、力を入れながら閉じる。パチッと上まぶたに意識して開く動作を<strong>20〜30秒繰り返す</strong></div>
@@ -1375,7 +1435,12 @@
 
 <nav class="nav-bar">
   <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)" disabled>‹</button>
-  <div class="slide-dots" id="dots"></div>
+  <div class="nav-progress">
+    <div class="progress-track">
+      <div class="progress-bar" id="progressBar"></div>
+    </div>
+    <div class="progress-text" id="progressText"></div>
+  </div>
   <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">›</button>
 </nav>
 </div>
@@ -1384,16 +1449,18 @@
   let current = 0;
   const slides = document.querySelectorAll('.slide');
   const total = slides.length;
-  const dotsEl = document.getElementById('dots');
-  for (let i = 0; i < total; i++) {
-    const d = document.createElement('div');
-    d.className = 'dot' + (i === 0 ? ' active' : '');
-    dotsEl.appendChild(d);
-  }
+  const progressBar = document.getElementById('progressBar');
+  const progressText = document.getElementById('progressText');
   function updateNav() {
     document.getElementById('prevBtn').disabled = (current === 0);
     document.getElementById('nextBtn').disabled = (current === total - 1);
-    document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('active', i === current));
+    const ratio = (current + 1) / total;
+    if (progressBar) {
+      progressBar.style.width = `${Math.max(6, ratio * 100)}%`;
+    }
+    if (progressText) {
+      progressText.textContent = `${current + 1} / ${total} PAGES`;
+    }
   }
   function changeSlide(dir) {
     const next = current + dir;
