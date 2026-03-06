@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>ヴィーナス美顔ヨガ® 講座資料</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&family=Zen+Maru+Gothic:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
     :root {
@@ -113,13 +113,103 @@
     .bg-pink   { background:linear-gradient(170deg,#fff 0%,var(--pink-light) 100%); }
     .bg-warm   { background:linear-gradient(160deg,var(--beige) 0%,var(--beige-mid) 100%); }
 
-    /* ── Cover (luxury) ── */
+    /* ── Cover (luxury / LP風) ── */
+    @keyframes shimmer {
+      0% { left:-100%; }
+      50% { left:100%; }
+      100% { left:100%; }
+    }
+    @keyframes gradientShift {
+      0%,100% { background-position:0% center; }
+      50% { background-position:100% center; }
+    }
+    @keyframes coverPulse {
+      0%,100% { transform:scale(1); box-shadow:0 10px 28px rgba(185,123,134,0.28); }
+      50% { transform:scale(1.04); box-shadow:0 14px 40px rgba(185,123,134,0.45); }
+    }
+
+    .bg-cover { background:linear-gradient(135deg,#FFF7F8 0%,#F6E9EB 60%,#FAF1F2 100%) !important; }
+
     .cover-inner {
       flex:1; display:flex; flex-direction:column;
       align-items:center; justify-content:center;
-      text-align:center; padding:50px 32px 36px;
+      text-align:center; padding:40px 24px 32px;
       position:relative;
     }
+
+    /* ブランドボックス */
+    .cover-brand-box {
+      width:calc(100% + 8px); margin:0 -4px 22px;
+      background:linear-gradient(135deg,rgba(255,255,255,0.96) 0%,rgba(254,250,245,0.92) 50%,rgba(255,255,255,0.96) 100%);
+      padding:26px 22px 20px;
+      position:relative; overflow:hidden;
+      border-top:2px solid; border-bottom:2px solid;
+      border-image:linear-gradient(90deg,rgba(212,165,116,0.2),rgba(212,165,116,0.55),rgba(212,165,116,0.2)) 1;
+      box-shadow:0 12px 40px rgba(139,111,71,0.12),inset 0 2px 4px rgba(255,255,255,1);
+    }
+    .cover-brand-box::before {
+      content:''; position:absolute; top:0; left:-100%; width:100%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,0.55),transparent);
+      animation:shimmer 4s ease-in-out infinite;
+    }
+    .cover-brand-box::after {
+      content:''; position:absolute; top:8px; left:0; right:0; bottom:8px;
+      border-top:1px solid rgba(212,165,116,0.18);
+      border-bottom:1px solid rgba(212,165,116,0.18);
+      pointer-events:none;
+    }
+    .cover-org {
+      font-family:'Noto Serif JP',serif; font-size:12px;
+      color:rgba(108,84,86,0.72); letter-spacing:3px; margin-bottom:6px;
+    }
+    .cover-divider {
+      width:40px; height:1px;
+      background:linear-gradient(90deg,transparent,#C89B6F,transparent);
+      margin:8px auto;
+    }
+    .cover-main-title {
+      font-family:'Noto Serif JP',serif; font-size:26px; font-weight:700; line-height:1.45;
+      background:linear-gradient(135deg,#5a4332 0%,#8B6F47 25%,#b89968 50%,#8B6F47 75%,#5a4332 100%);
+      background-size:200% auto;
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      animation:gradientShift 5s ease infinite;
+      letter-spacing:2px;
+      filter:drop-shadow(0 2px 6px rgba(139,111,71,0.18));
+    }
+    .cover-main-title .reg { font-size:13px; vertical-align:super; }
+    .cover-brand-venus {
+      font-family:'Noto Serif JP',serif; font-size:13px; letter-spacing:7px;
+      background:linear-gradient(135deg,#C89B6F 0%,#d4a574 50%,#C89B6F 100%);
+      -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+      margin-top:6px; display:block;
+      filter:drop-shadow(0 1px 4px rgba(200,155,111,0.25));
+    }
+
+    /* キャッチ・サブコピー */
+    .cover-catch {
+      font-family:'Noto Serif JP',serif; font-size:21px; font-weight:700;
+      color:#6C5456; line-height:1.65; margin-bottom:8px;
+    }
+    .cover-sub-copy {
+      font-family:'Zen Maru Gothic',sans-serif; font-size:12px;
+      color:rgba(108,84,86,0.68); line-height:1.75; font-weight:400;
+      margin-bottom:22px;
+    }
+
+    /* テキストバッジ (CTAスタイル) */
+    .cover-badge {
+      background:linear-gradient(135deg,#B97B86,#D3A1A8);
+      color:#fff; font-family:'Noto Serif JP',serif;
+      font-size:13px; letter-spacing:3px;
+      padding:12px 36px; border-radius:50px;
+      box-shadow:0 8px 24px rgba(185,123,134,0.35);
+      animation:coverPulse 2.5s ease-in-out infinite;
+      margin-bottom:18px; display:inline-block;
+      border:none;
+    }
+    .cover-deco { font-size:11px; letter-spacing:8px; color:#D3A1A8; opacity:0.65; }
+
+    /* 旧cover要素 (他スライドで使用) */
     .cover-corner {
       position:absolute; width:48px; height:48px;
       border-color:var(--gold); border-style:solid; opacity:0.45;
@@ -129,16 +219,8 @@
     .cover-corner.bl { bottom:18px; left:18px; border-width:0 0 1.5px 1.5px; }
     .cover-corner.br { bottom:18px; right:18px; border-width:0 1.5px 1.5px 0; }
     .cover-ornament { font-size:11px; letter-spacing:7px; color:var(--gold); margin-bottom:16px; opacity:0.75; }
-    .cover-circle { width:104px; height:104px; border-radius:50%; border:1.5px solid var(--gold-light); background:rgba(255,255,255,0.85); display:flex; align-items:center; justify-content:center; position:relative; margin-bottom:24px; box-shadow:0 4px 20px rgba(201,166,112,0.18); }
-    .cover-circle::after { content:''; position:absolute; inset:7px; border-radius:50%; border:0.5px solid var(--gold-light); }
-    .cover-org { font-family:'Noto Serif JP',serif; font-size:12px; color:var(--gold-dark); letter-spacing:3px; margin-bottom:8px; }
-    .cover-divider { width:50px; height:1px; background:linear-gradient(90deg,transparent,var(--gold),transparent); margin:12px auto; }
-    .cover-main-title { font-family:'Noto Serif JP',serif; font-size:27px; font-weight:700; color:var(--dark); line-height:1.5; }
-    .cover-main-title .reg { font-size:14px; vertical-align:super; color:var(--gold-dark); }
     .cover-sub-title { font-family:'Noto Serif JP',serif; font-size:13px; color:var(--medium); margin-top:8px; letter-spacing:1px; }
     .cover-tagline { font-family:'Noto Serif JP',serif; font-size:11px; color:var(--light); margin-top:6px; letter-spacing:2px; font-style:italic; }
-    .cover-badge { margin-top:26px; background:linear-gradient(135deg,var(--gold-dark),var(--gold)); color:var(--white); font-family:'Noto Serif JP',serif; font-size:11px; letter-spacing:3px; padding:8px 28px; border-radius:2px; box-shadow:0 3px 12px rgba(158,123,66,0.3); }
-    .cover-deco { margin-top:20px; font-size:11px; letter-spacing:8px; color:var(--gold-light); }
 
     /* ── Promise ── */
     .promise-card { background:var(--white); border-radius:12px; padding:17px 20px; margin-bottom:13px; display:flex; align-items:center; gap:16px; box-shadow:0 2px 12px rgba(0,0,0,0.06); }
@@ -266,18 +348,23 @@
 <div class="slide active bg-cover">
   <div class="slide-body">
     <div class="cover-inner">
-      <div class="cover-corner tl"></div>
-      <div class="cover-corner tr"></div>
-      <div class="cover-corner bl"></div>
-      <div class="cover-corner br"></div>
-      <div class="cover-ornament">— ✦ —</div>
-      <div class="cover-circle"><span style="font-size:42px">🌸</span></div>
-      <p class="cover-org">愛されヴィーナス塾</p>
-      <div class="cover-divider"></div>
-      <h1 class="cover-main-title">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
-      <p class="cover-sub-title">講座テキスト</p>
-      <p class="cover-tagline">〜 美しさは、あなたの中に宿る 〜</p>
-      <div class="cover-badge">VENUS BEAUTE</div>
+      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:18px;">— ✦ —</div>
+
+      <!-- ブランドボックス（シマーあり） -->
+      <div class="cover-brand-box">
+        <p class="cover-org">愛されヴィーナス塾</p>
+        <div class="cover-divider"></div>
+        <h1 class="cover-main-title">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
+        <span class="cover-brand-venus">VENUS BEAUTE</span>
+      </div>
+
+      <!-- キャッチコピー -->
+      <p class="cover-catch">お顔を変えて、<br>もっと自分らしく輝く。</p>
+      <p class="cover-sub-copy">一生若返るセルフ整形メソッドで<br>あなたの未来のお顔をつくる</p>
+
+      <!-- CTAスタイルバッジ -->
+      <div class="cover-badge">講座テキスト</div>
+
       <div class="cover-deco">✦ ✦ ✦</div>
     </div>
   </div>
@@ -853,18 +940,19 @@
 <div class="slide bg-cover">
   <div class="slide-body">
     <div class="end-inner">
-      <div class="cover-corner tl"></div>
-      <div class="cover-corner tr"></div>
-      <div class="cover-corner bl"></div>
-      <div class="cover-corner br"></div>
-      <div class="cover-ornament" style="margin-bottom:20px;">— ✦ —</div>
-      <div class="cover-circle" style="margin-bottom:22px;"><span style="font-size:42px">🌸</span></div>
-      <p class="cover-org">愛されヴィーナス塾</p>
-      <div class="cover-divider"></div>
+      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:20px;">— ✦ —</div>
+
+      <div class="cover-brand-box" style="margin-bottom:22px;">
+        <p class="cover-org">愛されヴィーナス塾</p>
+        <div class="cover-divider"></div>
+        <span class="cover-brand-venus" style="font-size:16px;letter-spacing:5px;margin-top:4px;">VENUS BEAUTE</span>
+      </div>
+
       <p class="end-message">今日もレッスンお疲れさまでした。<br>毎日の積み重ねが<br>あなたの美しさをつくります。</p>
-      <p class="end-brand">Venus beaute</p>
-      <div class="end-ornament">✦ ✦ ✦</div>
-      <p class="end-tagline">〜 美しさは、あなたの中に宿る 〜</p>
+
+      <p class="cover-catch" style="font-size:16px;margin-bottom:18px;">お顔も心も、これからもっと輝いていく。</p>
+
+      <div class="cover-deco">✦ ✦ ✦</div>
     </div>
   </div>
   <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
