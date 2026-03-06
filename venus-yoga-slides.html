@@ -107,11 +107,72 @@
     .toc-arrow { margin-left:auto; color:var(--greige); font-size:14px; }
 
     /* ── Backgrounds ── */
-    .bg-cover { background:linear-gradient(160deg,#fff 0%,#F5EFE6 55%,#EDE4D7 100%); }
+    .bg-cover  { background:linear-gradient(160deg,#fff 0%,#F5EFE6 55%,#EDE4D7 100%); }
     .bg-beige  { background:var(--beige); }
     .bg-white  { background:var(--white); }
     .bg-pink   { background:linear-gradient(170deg,#fff 0%,var(--pink-light) 100%); }
     .bg-warm   { background:linear-gradient(160deg,var(--beige) 0%,var(--beige-mid) 100%); }
+    .bg-theory { background:linear-gradient(160deg,#2a2118 0%,#3d2f1f 50%,#2a2118 100%); }
+    .bg-practice { background:linear-gradient(160deg,#1e2830 0%,#2d3d47 50%,#1e2830 100%); }
+
+    /* ── Section Cover (理論編・実践編) ── */
+    .section-cover-inner {
+      flex:1; display:flex; flex-direction:column;
+      align-items:center; justify-content:center;
+      text-align:center; padding:40px 28px 32px;
+    }
+    .section-cover-label {
+      font-family:'Noto Serif JP',serif;
+      font-size:11px; letter-spacing:6px;
+      color:rgba(200,155,111,0.7);
+      margin-bottom:24px;
+    }
+    .section-cover-line {
+      width:48px; height:1px;
+      background:linear-gradient(90deg,transparent,#C89B6F,transparent);
+      margin:0 auto 28px;
+    }
+    .section-cover-title {
+      font-family:'Noto Serif JP',serif;
+      font-size:clamp(26px,7vw,36px);
+      font-weight:700;
+      color:#F5EFE6;
+      letter-spacing:4px;
+      margin-bottom:16px;
+      line-height:1.4;
+    }
+    .section-cover-sub {
+      font-size:12px;
+      color:rgba(200,180,155,0.75);
+      letter-spacing:2px;
+      margin-bottom:28px;
+      font-family:'Noto Sans JP',sans-serif;
+      font-weight:300;
+    }
+    .section-cover-catch {
+      font-family:'Noto Serif JP',serif;
+      font-size:clamp(14px,3.5vw,17px);
+      color:rgba(245,239,230,0.85);
+      line-height:2;
+      font-weight:300;
+    }
+    .section-cover-badge {
+      display:inline-block;
+      margin-top:28px;
+      padding:8px 28px;
+      border:1px solid rgba(200,155,111,0.45);
+      border-radius:2px;
+      font-family:'Noto Serif JP',serif;
+      font-size:11px;
+      letter-spacing:5px;
+      color:rgba(200,155,111,0.85);
+    }
+    .section-cover-deco {
+      margin-top:20px;
+      font-size:10px;
+      letter-spacing:6px;
+      color:rgba(200,155,111,0.4);
+    }
 
     /* ── Cover (luxury / LP風) ── */
     @keyframes shimmer {
@@ -404,23 +465,23 @@
 </div>
 
 <!-- ==================== SLIDE 3: 理論編 表紙 ==================== -->
-<div class="slide bg-cover">
+<div class="slide bg-theory">
   <div class="slide-body">
-    <div class="cover-inner">
-      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:18px;">— ✦ —</div>
-      <div class="cover-brand-box">
-        <p class="cover-org">愛されヴィーナス塾</p>
-        <div class="cover-divider"></div>
-        <h1 class="cover-main-title" style="font-size:clamp(20px,5vw,28px);">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
-        <span class="cover-brand-venus">Official Theory Book</span>
-      </div>
-      <p class="cover-catch" style="font-size:clamp(18px,4.5vw,24px);">お顔は、人生の鏡。</p>
-      <p class="cover-sub-copy">表情筋・心・習慣の理論を学んで<br>内側から輝く美しさを手に入れる</p>
-      <div class="cover-badge">理論編</div>
-      <div class="cover-deco">✦ ✦ ✦</div>
+    <div class="section-cover-inner">
+      <p class="section-cover-label">愛されヴィーナス塾 ✦ VENUS BEAUTE</p>
+      <div class="section-cover-line"></div>
+      <h1 class="section-cover-title">理論編</h1>
+      <p class="section-cover-sub">Official Theory Book</p>
+      <p class="section-cover-catch">
+        お顔は、人生の鏡。<br>
+        表情筋・心・習慣の理論を学んで<br>
+        内側から輝く美しさを手に入れる
+      </p>
+      <div class="section-cover-badge">第1章 〜 第6章</div>
+      <p class="section-cover-deco">✦ ✦ ✦</p>
     </div>
   </div>
-  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+  <div class="slide-footer" style="border-top:1px solid rgba(200,155,111,0.2);"><span class="copyright-text" style="color:rgba(200,155,111,0.5);">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text" style="color:rgba(200,155,111,0.5);">無断転載禁止</span></div>
 </div>
 
 <!-- ==================== SLIDE 4: 理論 第1章 表情筋とは？ ==================== -->
@@ -700,23 +761,23 @@
 </div>
 
 <!-- ==================== SLIDE 13: 実践編 セクション仕切り ==================== -->
-<div class="slide bg-cover">
+<div class="slide bg-practice">
   <div class="slide-body">
-    <div class="cover-inner">
-      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:18px;">— ✦ —</div>
-      <div class="cover-brand-box">
-        <p class="cover-org">愛されヴィーナス塾</p>
-        <div class="cover-divider"></div>
-        <h1 class="cover-main-title" style="font-size:clamp(20px,5vw,28px);">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
-        <span class="cover-brand-venus">Practice Session</span>
-      </div>
-      <p class="cover-catch" style="font-size:clamp(18px,4.5vw,24px);">実践編スタート</p>
-      <p class="cover-sub-copy">理論を身体で体験しよう。<br>約20ポーズで、お顔を整える。</p>
-      <div class="cover-badge">実践編</div>
-      <div class="cover-deco">✦ ✦ ✦</div>
+    <div class="section-cover-inner">
+      <p class="section-cover-label">愛されヴィーナス塾 ✦ VENUS BEAUTE</p>
+      <div class="section-cover-line" style="background:linear-gradient(90deg,transparent,#8aafc0,transparent);"></div>
+      <h1 class="section-cover-title" style="color:#E8F4F8;">実践編</h1>
+      <p class="section-cover-sub" style="color:rgba(180,210,225,0.75);">Practice Session</p>
+      <p class="section-cover-catch" style="color:rgba(232,244,248,0.85);">
+        理論を身体で体験しよう。<br>
+        約20ポーズで、<br>
+        お顔の本来の力を引き出す。
+      </p>
+      <div class="section-cover-badge" style="border-color:rgba(138,175,192,0.45);color:rgba(138,175,192,0.85);">第1章 〜 第5章 ＋ 約束</div>
+      <p class="section-cover-deco">✦ ✦ ✦</p>
     </div>
   </div>
-  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+  <div class="slide-footer" style="border-top:1px solid rgba(138,175,192,0.2);"><span class="copyright-text" style="color:rgba(138,175,192,0.5);">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text" style="color:rgba(138,175,192,0.5);">無断転載禁止</span></div>
 </div>
 
 <!-- ==================== SLIDE 14: 第1章 基本姿勢 ==================== -->
