@@ -124,11 +124,11 @@
       50% { background-position:100% center; }
     }
     @keyframes coverPulse {
-      0%,100% { transform:scale(1); box-shadow:0 10px 28px rgba(185,123,134,0.28); }
-      50% { transform:scale(1.04); box-shadow:0 14px 40px rgba(185,123,134,0.45); }
+      0%,100% { transform:scale(1); box-shadow:0 10px 28px rgba(158,123,66,0.28); }
+      50% { transform:scale(1.04); box-shadow:0 14px 40px rgba(158,123,66,0.42); }
     }
 
-    .bg-cover { background:linear-gradient(135deg,#FFF7F8 0%,#F6E9EB 60%,#FAF1F2 100%) !important; }
+    .bg-cover { background:linear-gradient(160deg,#fff 0%,#F5EFE6 55%,#EDE4D7 100%) !important; }
 
     .cover-inner {
       flex:1; display:flex; flex-direction:column;
@@ -188,26 +188,24 @@
     /* キャッチ・サブコピー */
     .cover-catch {
       font-family:'Noto Serif JP',serif; font-size:21px; font-weight:700;
-      color:#6C5456; line-height:1.65; margin-bottom:8px;
+      color:var(--dark); line-height:1.65; margin-bottom:8px;
     }
     .cover-sub-copy {
       font-family:'Zen Maru Gothic',sans-serif; font-size:12px;
-      color:rgba(108,84,86,0.68); line-height:1.75; font-weight:400;
+      color:var(--medium); line-height:1.75; font-weight:400;
       margin-bottom:22px;
     }
 
-    /* テキストバッジ (CTAスタイル) */
+    /* サブタイトル */
     .cover-badge {
-      background:linear-gradient(135deg,#B97B86,#D3A1A8);
-      color:#fff; font-family:'Noto Serif JP',serif;
-      font-size:13px; letter-spacing:3px;
-      padding:12px 36px; border-radius:50px;
-      box-shadow:0 8px 24px rgba(185,123,134,0.35);
-      animation:coverPulse 2.5s ease-in-out infinite;
+      font-family:'Noto Serif JP',serif; font-size:12px;
+      color:var(--gold-dark); letter-spacing:4px;
       margin-bottom:18px; display:inline-block;
-      border:none;
+      border-bottom:1px solid var(--gold-light);
+      border-top:1px solid var(--gold-light);
+      padding:6px 20px;
     }
-    .cover-deco { font-size:11px; letter-spacing:8px; color:#D3A1A8; opacity:0.65; }
+    .cover-deco { font-size:11px; letter-spacing:8px; color:var(--gold-light); opacity:0.9; }
 
     /* 旧cover要素 (他スライドで使用) */
     .cover-corner {
@@ -308,37 +306,40 @@
     <button class="menu-link" onclick="gotoSlide(0)"><span class="menu-link-num">表紙</span><span class="menu-link-text">ヴィーナス美顔ヨガ®</span></button>
     <button class="menu-link" onclick="gotoSlide(1)"><span class="menu-link-num">目次</span><span class="menu-link-text">CONTENTS</span></button>
 
-    <span class="menu-section-label">第1章</span>
-    <button class="menu-link" onclick="gotoSlide(2)"><span class="menu-link-num">基本姿勢</span><span class="menu-link-text">美の土台となる正しい姿勢</span></button>
+    <span class="menu-section-label">理論編</span>
+    <button class="menu-link" onclick="gotoSlide(2)"><span class="menu-link-num">表紙</span><span class="menu-link-text">Official Theory Book</span></button>
+    <button class="menu-link" onclick="gotoSlide(3)"><span class="menu-link-num">第1章</span><span class="menu-link-text">表情筋とは？</span></button>
+    <button class="menu-link" onclick="gotoSlide(4)"><span class="menu-link-num">第2章</span><span class="menu-link-text">ヴィーナス美顔ヨガとは</span></button>
+    <button class="menu-link" onclick="gotoSlide(5)"><span class="menu-link-num">第3章</span><span class="menu-link-text">ゆるめる × 整える × 鍛える</span></button>
+    <button class="menu-link" onclick="gotoSlide(6)"><span class="menu-link-num">第4章</span><span class="menu-link-text">変化が起こる理由</span></button>
+    <button class="menu-link" onclick="gotoSlide(7)"><span class="menu-link-num">第5章</span><span class="menu-link-text">心とお顔の関係</span></button>
+    <button class="menu-link" onclick="gotoSlide(8)"><span class="menu-link-num">第6章</span><span class="menu-link-text">三つの約束（概要）</span></button>
+    <button class="menu-link" onclick="gotoSlide(9)"><span class="menu-link-num">第6章①</span><span class="menu-link-text">継続すること</span></button>
+    <button class="menu-link" onclick="gotoSlide(10)"><span class="menu-link-num">第6章②</span><span class="menu-link-text">自己流でやらないこと</span></button>
+    <button class="menu-link" onclick="gotoSlide(11)"><span class="menu-link-num">第6章③</span><span class="menu-link-text">自分を愛し、褒めること</span></button>
 
-    <span class="menu-section-label">第2章</span>
-    <button class="menu-link" onclick="gotoSlide(3)"><span class="menu-link-num">舌の位置</span><span class="menu-link-text">顔のたるみ予防</span></button>
-
-    <span class="menu-section-label">第3章</span>
-    <button class="menu-link" onclick="gotoSlide(4)"><span class="menu-link-num">概要</span><span class="menu-link-text">上半身のほぐし＆ストレッチ</span></button>
-    <button class="menu-link" onclick="gotoSlide(5)"><span class="menu-link-num">①〜⑦</span><span class="menu-link-text">上半身のほぐし ①</span></button>
-    <button class="menu-link" onclick="gotoSlide(6)"><span class="menu-link-num">⑧〜⑬</span><span class="menu-link-text">上半身のほぐし ②</span></button>
-
-    <span class="menu-section-label">第4章</span>
-    <button class="menu-link" onclick="gotoSlide(7)"><span class="menu-link-num">概要</span><span class="menu-link-text">お顔の筋膜ほぐし</span></button>
-    <button class="menu-link" onclick="gotoSlide(8)"><span class="menu-link-num">耳</span><span class="menu-link-text">耳ほぐし</span></button>
-    <button class="menu-link" onclick="gotoSlide(9)"><span class="menu-link-num">頭皮</span><span class="menu-link-text">頭皮ほぐし</span></button>
-    <button class="menu-link" onclick="gotoSlide(10)"><span class="menu-link-num">顔 ①</span><span class="menu-link-text">顔の各部位ほぐし ①</span></button>
-    <button class="menu-link" onclick="gotoSlide(11)"><span class="menu-link-num">顔 ②</span><span class="menu-link-text">顔の各部位ほぐし ②</span></button>
-
-    <span class="menu-section-label">第5章</span>
-    <button class="menu-link" onclick="gotoSlide(12)"><span class="menu-link-num">概要</span><span class="menu-link-text">ヴィーナス美顔ヨガ 基本ポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(13)"><span class="menu-link-num">① ア</span><span class="menu-link-text">アのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(14)"><span class="menu-link-num">② イ</span><span class="menu-link-text">イのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(15)"><span class="menu-link-num">③ ウ</span><span class="menu-link-text">ウのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(16)"><span class="menu-link-num">④ エ</span><span class="menu-link-text">エのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(17)"><span class="menu-link-num">⑤ オ</span><span class="menu-link-text">オのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(18)"><span class="menu-link-num">⑥ ヒ</span><span class="menu-link-text">ヒのポーズ</span></button>
-    <button class="menu-link" onclick="gotoSlide(19)"><span class="menu-link-num">⑦ 目元</span><span class="menu-link-text">目元パッチリポーズ</span></button>
-
-    <span class="menu-section-label">第7章</span>
-    <button class="menu-link" onclick="gotoSlide(20)"><span class="menu-link-num">約束</span><span class="menu-link-text">ヴィーナスの3つの約束</span></button>
-    <button class="menu-link" onclick="gotoSlide(21)" style="border-bottom:none"><span class="menu-link-num">おわり</span><span class="menu-link-text">メッセージ</span></button>
+    <span class="menu-section-label">実践編</span>
+    <button class="menu-link" onclick="gotoSlide(12)"><span class="menu-link-num">表紙</span><span class="menu-link-text">実践編スタート</span></button>
+    <button class="menu-link" onclick="gotoSlide(13)"><span class="menu-link-num">基本姿勢</span><span class="menu-link-text">美の土台となる正しい姿勢</span></button>
+    <button class="menu-link" onclick="gotoSlide(14)"><span class="menu-link-num">舌の位置</span><span class="menu-link-text">顔のたるみ予防</span></button>
+    <button class="menu-link" onclick="gotoSlide(15)"><span class="menu-link-num">第3章 概要</span><span class="menu-link-text">上半身のほぐし＆ストレッチ</span></button>
+    <button class="menu-link" onclick="gotoSlide(16)"><span class="menu-link-num">①〜⑦</span><span class="menu-link-text">上半身のほぐし ①</span></button>
+    <button class="menu-link" onclick="gotoSlide(17)"><span class="menu-link-num">⑧〜⑬</span><span class="menu-link-text">上半身のほぐし ②</span></button>
+    <button class="menu-link" onclick="gotoSlide(18)"><span class="menu-link-num">第4章 概要</span><span class="menu-link-text">お顔の筋膜ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(19)"><span class="menu-link-num">耳</span><span class="menu-link-text">耳ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(20)"><span class="menu-link-num">頭皮</span><span class="menu-link-text">頭皮ほぐし</span></button>
+    <button class="menu-link" onclick="gotoSlide(21)"><span class="menu-link-num">顔 ①</span><span class="menu-link-text">顔の各部位ほぐし ①</span></button>
+    <button class="menu-link" onclick="gotoSlide(22)"><span class="menu-link-num">顔 ②</span><span class="menu-link-text">顔の各部位ほぐし ②</span></button>
+    <button class="menu-link" onclick="gotoSlide(23)"><span class="menu-link-num">第5章 概要</span><span class="menu-link-text">ヴィーナス美顔ヨガ 基本ポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(24)"><span class="menu-link-num">① ア</span><span class="menu-link-text">アのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(25)"><span class="menu-link-num">② イ</span><span class="menu-link-text">イのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(26)"><span class="menu-link-num">③ ウ</span><span class="menu-link-text">ウのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(27)"><span class="menu-link-num">④ エ</span><span class="menu-link-text">エのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(28)"><span class="menu-link-num">⑤ オ</span><span class="menu-link-text">オのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(29)"><span class="menu-link-num">⑥ ヒ</span><span class="menu-link-text">ヒのポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(30)"><span class="menu-link-num">⑦ 目元</span><span class="menu-link-text">目元パッチリポーズ</span></button>
+    <button class="menu-link" onclick="gotoSlide(31)"><span class="menu-link-num">約束</span><span class="menu-link-text">ヴィーナスの3つの約束</span></button>
+    <button class="menu-link" onclick="gotoSlide(32)" style="border-bottom:none"><span class="menu-link-num">おわり</span><span class="menu-link-text">メッセージ</span></button>
   </div>
 </div>
 
@@ -377,18 +378,348 @@
     <div class="content-pad">
       <div class="chapter-badge"><span class="chapter-label">CONTENTS</span></div>
       <h2 class="slide-title">目次</h2>
-      <div class="toc-item"><span class="toc-num">第1章</span><span class="toc-title">基本姿勢</span><span class="toc-arrow">›</span></div>
-      <div class="toc-item"><span class="toc-num">第2章</span><span class="toc-title">舌の正しい位置</span><span class="toc-arrow">›</span></div>
-      <div class="toc-item"><span class="toc-num">第3章</span><span class="toc-title">上半身のほぐし＆ストレッチ</span><span class="toc-arrow">›</span></div>
-      <div class="toc-item"><span class="toc-num">第4章</span><span class="toc-title">お顔の筋膜ほぐし</span><span class="toc-arrow">›</span></div>
-      <div class="toc-item"><span class="toc-num">第5章</span><span class="toc-title">ヴィーナス美顔ヨガ 基本ポーズ</span><span class="toc-arrow">›</span></div>
-      <div class="toc-item" style="border-bottom:none"><span class="toc-num">第7章</span><span class="toc-title">ヴィーナスの3つの約束</span><span class="toc-arrow">›</span></div>
+
+      <div style="margin-bottom:10px;">
+        <div style="background:var(--greige);border-radius:6px;padding:6px 14px;margin-bottom:8px;display:inline-block;font-size:11px;letter-spacing:3px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;">理論編</div>
+        <div class="toc-item"><span class="toc-num">第1章</span><span class="toc-title">表情筋とは？</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第2章</span><span class="toc-title">ヴィーナス美顔ヨガとは</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第3章</span><span class="toc-title">ゆるめる × 整える × 鍛える</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第4章</span><span class="toc-title">変化が起こる理由</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第5章</span><span class="toc-title">心とお顔の関係</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item" style="border-bottom:none"><span class="toc-num">第6章</span><span class="toc-title">三つの約束</span><span class="toc-arrow">›</span></div>
+      </div>
+
+      <div style="margin-top:14px;">
+        <div style="background:linear-gradient(135deg,#C89B6F,#b08050);border-radius:6px;padding:6px 14px;margin-bottom:8px;display:inline-block;font-size:11px;letter-spacing:3px;color:#fff;font-family:'Noto Serif JP',serif;">実践編</div>
+        <div class="toc-item"><span class="toc-num">第1章</span><span class="toc-title">基本姿勢</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第2章</span><span class="toc-title">舌の正しい位置</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第3章</span><span class="toc-title">上半身のほぐし＆ストレッチ</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第4章</span><span class="toc-title">お顔の筋膜ほぐし</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item"><span class="toc-num">第5章</span><span class="toc-title">ヴィーナス美顔ヨガ 基本ポーズ</span><span class="toc-arrow">›</span></div>
+        <div class="toc-item" style="border-bottom:none"><span class="toc-num">約束</span><span class="toc-title">ヴィーナスの3つの約束</span><span class="toc-arrow">›</span></div>
+      </div>
     </div>
   </div>
   <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
 </div>
 
-<!-- ==================== SLIDE 3: 第1章 基本姿勢 ==================== -->
+<!-- ==================== SLIDE 3: 理論編 表紙 ==================== -->
+<div class="slide bg-cover">
+  <div class="slide-body">
+    <div class="cover-inner">
+      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:18px;">— ✦ —</div>
+      <div class="cover-brand-box">
+        <p class="cover-org">愛されヴィーナス塾</p>
+        <div class="cover-divider"></div>
+        <h1 class="cover-main-title" style="font-size:clamp(20px,5vw,28px);">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
+        <span class="cover-brand-venus">Official Theory Book</span>
+      </div>
+      <p class="cover-catch" style="font-size:clamp(18px,4.5vw,24px);">お顔は、人生の鏡。</p>
+      <p class="cover-sub-copy">表情筋・心・習慣の理論を学んで<br>内側から輝く美しさを手に入れる</p>
+      <div class="cover-badge">理論編</div>
+      <div class="cover-deco">✦ ✦ ✦</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 4: 理論 第1章 表情筋とは？ ==================== -->
+<div class="slide bg-beige">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第1章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">表情筋とは？</h2>
+      <div class="card">
+        <p class="card-title">表情筋の特徴</p>
+        <ul class="b-list">
+          <li>全身に<strong>約600種類</strong>の筋肉があり、表情筋はその一部</li>
+          <li>顔には<strong>30種類以上</strong>の表情筋がある</li>
+          <li>一般的な筋肉は骨と骨をつなぐが、<strong>表情筋は皮膚についている</strong></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="card-title">なぜケアが必要なのか</p>
+        <ul class="b-list">
+          <li>骨でなく皮膚についているため、<strong>たるみやすく、崩れやすい</strong></li>
+          <li>正しい方法でゆるめ・目覚めさせ・鍛えることが大切</li>
+          <li>間違ったケアは逆効果になることも</li>
+        </ul>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;text-align:center;padding:14px 16px;">
+        <p style="font-size:13px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;line-height:1.8;">表情筋を<strong>正しく</strong>ゆるめ、整え、鍛えること。<br>それがヴィーナス美顔ヨガの出発点。</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 5: 理論 第2章 ヴィーナス美顔ヨガとは ==================== -->
+<div class="slide bg-white">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第2章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">ヴィーナス美顔ヨガとは</h2>
+      <div class="card">
+        <p class="card-title">全身でつながるメソッド</p>
+        <ul class="b-list">
+          <li>顔の表情筋は<strong>頭皮・首・鎖骨・肩・胸</strong>とつながっている</li>
+          <li>顔だけでなく<strong>上半身全体</strong>からアプローチ</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="card-title">正しいアプローチの順番</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+          <div style="background:var(--beige);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;font-weight:700;color:var(--gold);">①</span>
+            <span style="font-size:13px;color:var(--brown-dark);">上半身をほぐす</span>
+          </div>
+          <div style="text-align:center;color:var(--gold-light);font-size:18px;">↓</div>
+          <div style="background:var(--beige);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;font-weight:700;color:var(--gold);">②</span>
+            <span style="font-size:13px;color:var(--brown-dark);">首・頭皮をゆるめる</span>
+          </div>
+          <div style="text-align:center;color:var(--gold-light);font-size:18px;">↓</div>
+          <div style="background:var(--beige);border-radius:8px;padding:10px 14px;display:flex;align-items:center;gap:10px;">
+            <span style="font-size:18px;font-weight:700;color:var(--gold);">③</span>
+            <span style="font-size:13px;color:var(--brown-dark);">表情筋を整え・鍛える（約20ポーズ）</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 6: 理論 第3章 ゆるめる×整える×鍛える ==================== -->
+<div class="slide bg-beige">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第3章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">ゆるめる × 整える × 鍛える</h2>
+      <div style="display:flex;flex-direction:column;gap:12px;margin-top:8px;">
+        <div class="card">
+          <p class="card-title" style="color:#8B7355;">🌿 ゆるめる</p>
+          <p style="font-size:13px;color:var(--brown-dark);line-height:1.8;">固まった表情筋や首・頭皮の緊張をほどく。<br>ゆるめることが変化の第一歩。</p>
+        </div>
+        <div class="card">
+          <p class="card-title" style="color:#8B7355;">✦ 整える</p>
+          <p style="font-size:13px;color:var(--brown-dark);line-height:1.8;">左右のバランスを整え、歪みをリセット。<br>本来の骨格・筋肉の位置に戻す。</p>
+        </div>
+        <div class="card">
+          <p class="card-title" style="color:#8B7355;">💪 鍛える</p>
+          <p style="font-size:13px;color:var(--brown-dark);line-height:1.8;">正しい方法で表情筋を目覚めさせ、<br>引き上げる力を育てる。</p>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;text-align:center;padding:12px 16px;">
+        <p style="font-size:13px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;">この3つのバランスが<strong>変化を加速させる</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 7: 理論 第4章 変化が起こる理由 ==================== -->
+<div class="slide bg-white">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第4章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">変化が起こる理由</h2>
+      <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px;">
+        <div style="background:var(--beige);border-radius:8px;padding:12px 14px;">
+          <p style="font-size:13px;font-weight:600;color:var(--gold-dark);margin-bottom:4px;">身体がゆるむ</p>
+          <p style="font-size:12px;color:var(--brown);line-height:1.7;">首・肩・胸まわりの緊張がほどける</p>
+        </div>
+        <div style="text-align:center;color:var(--gold-light);font-size:18px;">↓</div>
+        <div style="background:var(--beige);border-radius:8px;padding:12px 14px;">
+          <p style="font-size:13px;font-weight:600;color:var(--gold-dark);margin-bottom:4px;">血流・リンパが改善される</p>
+          <p style="font-size:12px;color:var(--brown);line-height:1.7;">顔まわりに栄養・酸素が届きやすくなる</p>
+        </div>
+        <div style="text-align:center;color:var(--gold-light);font-size:18px;">↓</div>
+        <div style="background:var(--beige);border-radius:8px;padding:12px 14px;">
+          <p style="font-size:13px;font-weight:600;color:var(--gold-dark);margin-bottom:4px;">表情筋が本来の力を取り戻す</p>
+          <p style="font-size:12px;color:var(--brown);line-height:1.7;">フェイスライン・頬・目元に変化が現れる</p>
+        </div>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;text-align:center;padding:12px 16px;">
+        <p style="font-size:13px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;">ヴィーナス美顔ヨガは<strong>本来の美しさを引き出す</strong>メソッド</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 8: 理論 第5章 心とお顔の関係 ==================== -->
+<div class="slide bg-beige">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第5章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">心とお顔の関係</h2>
+      <div class="card">
+        <p class="card-title">心が下を向くと、顔も下を向く</p>
+        <ul class="b-list">
+          <li>気持ちが落ちると表情も落ちる</li>
+          <li>下を向く習慣が<strong>顔の下垂</strong>につながる</li>
+          <li>感情・姿勢・表情は密接につながっている</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:14px;">
+        <p class="card-title">ヴィーナス美顔ヨガの理念</p>
+        <ul class="b-list">
+          <li><strong>自分を褒めること・愛すること</strong>が美の根本</li>
+          <li>顔を上げることは、<strong>自分を大切にすること</strong></li>
+          <li>内側の変化が外側の変化を生む</li>
+        </ul>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;text-align:center;padding:12px 16px;">
+        <p style="font-size:13px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;line-height:1.9;">お顔を上げて、<br><strong>自分らしく輝くことを選ぼう。</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 9: 理論 第6章 三つの約束（概要） ==================== -->
+<div class="slide bg-white">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第6章</span><span class="chapter-label">理論編</span></div>
+      <h2 class="slide-title">三つの約束</h2>
+      <p style="font-size:12px;color:var(--brown);text-align:center;margin-bottom:16px;letter-spacing:1px;">変化を手に入れるための大切な約束</p>
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <div class="card" style="border-left:3px solid var(--gold);">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:22px;font-weight:700;color:var(--gold);font-family:'Noto Serif JP',serif;">①</span>
+            <div>
+              <p style="font-size:14px;font-weight:600;color:var(--brown-dark);">継続すること</p>
+              <p style="font-size:12px;color:var(--brown);margin-top:2px;">1日5分でも続けることが変化をつくる</p>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--gold);">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:22px;font-weight:700;color:var(--gold);font-family:'Noto Serif JP',serif;">②</span>
+            <div>
+              <p style="font-size:14px;font-weight:600;color:var(--brown-dark);">自己流でやらないこと</p>
+              <p style="font-size:12px;color:var(--brown);margin-top:2px;">設計された順番・方法を守る</p>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="border-left:3px solid var(--gold);">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <span style="font-size:22px;font-weight:700;color:var(--gold);font-family:'Noto Serif JP',serif;">③</span>
+            <div>
+              <p style="font-size:14px;font-weight:600;color:var(--brown-dark);">自分を愛し、褒めること</p>
+              <p style="font-size:12px;color:var(--brown);margin-top:2px;">小さな変化を認め、自分を大切にする</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 10: 理論 第6章① 継続すること ==================== -->
+<div class="slide bg-beige">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第6章①</span><span class="chapter-label">三つの約束</span></div>
+      <h2 class="slide-title">継続すること</h2>
+      <div class="highlight-box" style="text-align:center;padding:14px 16px;margin-bottom:16px;">
+        <p style="font-size:14px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;line-height:1.9;">完璧でなくていい。<br><strong>やめないことが、変化をつくる。</strong></p>
+      </div>
+      <div class="card">
+        <ul class="b-list">
+          <li>毎日完璧にやる必要はない</li>
+          <li><strong>1日5分でも続けること</strong>に意味がある</li>
+          <li>変化はある日突然、気づくようにやってくる</li>
+          <li>「続けてきた自分」が一番の財産になる</li>
+        </ul>
+      </div>
+      <div style="margin-top:16px;background:var(--greige);border-radius:10px;padding:14px 16px;text-align:center;">
+        <p style="font-size:12px;color:var(--brown);line-height:1.8;">お顔は変わる。<br>あなたが諦めない限り、必ず変わる。</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 11: 理論 第6章② 自己流でやらないこと ==================== -->
+<div class="slide bg-white">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第6章②</span><span class="chapter-label">三つの約束</span></div>
+      <h2 class="slide-title">自己流でやらないこと</h2>
+      <div class="card" style="border-left:3px solid #e07070;margin-bottom:12px;">
+        <p class="card-title" style="color:#c05050;">⚠ 自己流のリスク</p>
+        <ul class="b-list">
+          <li>間違った力のかけ方でシワが<strong>深くなる</strong>ことがある</li>
+          <li>効果がないだけでなく、逆効果になる可能性</li>
+          <li>「なんとなく知っている」は危険</li>
+        </ul>
+      </div>
+      <div class="card">
+        <p class="card-title">正しく学ぶ理由</p>
+        <ul class="b-list">
+          <li>約20ポーズには<strong>設計された順番</strong>がある</li>
+          <li>ゆるめてから鍛える、という流れが重要</li>
+          <li>講師と一緒に、正しいフォームを身につける</li>
+        </ul>
+      </div>
+      <div class="highlight-box" style="margin-top:14px;text-align:center;padding:12px 16px;">
+        <p style="font-size:13px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;">正しいメソッドで、<strong>最短で変わる。</strong></p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 12: 理論 第6章③ 自分を愛し、褒めること ==================== -->
+<div class="slide bg-beige">
+  <div class="slide-body">
+    <div class="content-pad">
+      <div class="chapter-badge"><span class="chapter-num" style="background:var(--greige);">第6章③</span><span class="chapter-label">三つの約束</span></div>
+      <h2 class="slide-title">自分を愛し、褒めること</h2>
+      <div class="highlight-box" style="text-align:center;padding:14px 16px;margin-bottom:16px;">
+        <p style="font-size:14px;color:var(--brown-dark);font-family:'Noto Serif JP',serif;line-height:1.9;">小さな変化を認めること。<br><strong>それが最大の美容法。</strong></p>
+      </div>
+      <div class="card">
+        <ul class="b-list">
+          <li>鏡を見るとき、<strong>いいところを探す習慣</strong>をつける</li>
+          <li>昨日より少し顔が上がった、それでいい</li>
+          <li>自分を褒めると、表情が自然と明るくなる</li>
+          <li>お顔を上げることは、<strong>自分を大切にすること</strong></li>
+        </ul>
+      </div>
+      <div style="margin-top:16px;background:var(--greige);border-radius:10px;padding:14px 16px;text-align:center;">
+        <p style="font-size:12px;color:var(--brown);line-height:1.9;">あなたのお顔は、あなたの歴史。<br>その顔を愛することが、<br>ヴィーナス美顔ヨガの真髄です。</p>
+      </div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 13: 実践編 セクション仕切り ==================== -->
+<div class="slide bg-cover">
+  <div class="slide-body">
+    <div class="cover-inner">
+      <div style="font-size:11px;letter-spacing:7px;color:#C89B6F;opacity:0.8;margin-bottom:18px;">— ✦ —</div>
+      <div class="cover-brand-box">
+        <p class="cover-org">愛されヴィーナス塾</p>
+        <div class="cover-divider"></div>
+        <h1 class="cover-main-title" style="font-size:clamp(20px,5vw,28px);">ヴィーナス美顔ヨガ<span class="reg">®</span></h1>
+        <span class="cover-brand-venus">Practice Session</span>
+      </div>
+      <p class="cover-catch" style="font-size:clamp(18px,4.5vw,24px);">実践編スタート</p>
+      <p class="cover-sub-copy">理論を身体で体験しよう。<br>約20ポーズで、お顔を整える。</p>
+      <div class="cover-badge">実践編</div>
+      <div class="cover-deco">✦ ✦ ✦</div>
+    </div>
+  </div>
+  <div class="slide-footer"><span class="copyright-text">© 2026 Venus beaute All Rights Reserved.</span><span class="copyright-text">無断転載禁止</span></div>
+</div>
+
+<!-- ==================== SLIDE 14: 第1章 基本姿勢 ==================== -->
 <div class="slide bg-white">
   <div class="slide-body">
     <div class="content-pad">
