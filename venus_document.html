@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ヴィーナス美顔ヨガ® 講座資料</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+    :root {
+      --gold: #C9A670; --gold-dark: #9E7B42; --gold-light: #EAD9B5;
+      --beige: #F5EFE6; --beige-mid: #EDE4D7;
+      --pink: #CC9F9A; --pink-light: #F0DEDA;
+      --dark: #3A322C; --medium: #6B5F55; --light: #9A8E86;
+    }
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      color: var(--dark);
+      background: #fff;
+      font-size: 14px;
+      line-height: 1.85;
+    }
+
+    /* ── セクション（ページ区切り単位） ── */
+    .section {
+      padding: 36px 0 20px;
+      border-bottom: 1px solid var(--beige-mid);
+    }
+    .section:last-child { border-bottom: none; }
+
+    /* ── 表紙 ── */
+    .cover {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(160deg, #fff 0%, #F5EFE6 55%, #EDE4D7 100%);
+      text-align: center;
+      padding: 60px 32px;
+      position: relative;
+    }
+    .cover-logo { width: 88px; height: 88px; object-fit: contain; margin-bottom: 28px; opacity: 0.85; }
+    .cover-org {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px; letter-spacing: 5px;
+      color: var(--medium); margin-bottom: 10px;
+    }
+    .cover-brand {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 12px; letter-spacing: 7px;
+      color: var(--gold); margin-bottom: 28px;
+    }
+    .cover-divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 0 auto 28px;
+    }
+    .cover-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 28px; font-weight: 700;
+      color: var(--dark); letter-spacing: 2px;
+      line-height: 1.5; margin-bottom: 16px;
+    }
+    .cover-reg { font-size: 16px; vertical-align: super; }
+    .cover-sub {
+      font-size: 13px; color: var(--medium);
+      letter-spacing: 3px; margin-bottom: 40px;
+    }
+    .cover-catch {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px; color: var(--medium);
+      line-height: 2; font-style: italic;
+    }
+    .cover-copy {
+      position: absolute; bottom: 28px;
+      font-size: 10px; color: var(--light);
+      letter-spacing: 0.5px;
+    }
+
+    /* ── 目次 ── */
+    .toc-section-label {
+      font-size: 10px; letter-spacing: 4px;
+      color: var(--gold-dark); font-family: 'Noto Serif JP', serif;
+      margin: 20px 0 8px;
+    }
+    .toc-item {
+      display: flex; align-items: baseline;
+      gap: 8px; padding: 7px 0;
+      border-bottom: 1px dotted var(--beige-mid);
+      font-size: 14px;
+    }
+    .toc-num {
+      font-family: 'Noto Serif JP', serif;
+      color: var(--gold); font-size: 12px;
+      min-width: 60px; flex-shrink: 0;
+    }
+
+    /* ── セクション表紙 ── */
+    .sec-cover {
+      background: linear-gradient(135deg, var(--beige) 0%, var(--beige-mid) 100%);
+      border-radius: 12px;
+      padding: 32px 28px;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    .sec-cover-label {
+      font-size: 10px; letter-spacing: 5px;
+      color: var(--gold); margin-bottom: 12px;
+    }
+    .sec-cover-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 26px; font-weight: 700;
+      color: var(--dark); margin-bottom: 10px;
+    }
+    .sec-cover-desc {
+      font-size: 13px; color: var(--medium);
+      line-height: 1.9;
+    }
+    .sec-cover-tags {
+      display: flex; gap: 10px; justify-content: center;
+      margin-top: 16px; flex-wrap: wrap;
+    }
+    .sec-cover-tag {
+      background: var(--gold); color: #fff;
+      font-size: 11px; padding: 4px 14px;
+      border-radius: 20px; letter-spacing: 1px;
+      font-family: 'Noto Serif JP', serif;
+    }
+
+    /* ── 章ヘッダー ── */
+    .ch-header {
+      display: flex; align-items: center; gap: 10px;
+      margin-bottom: 18px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--gold-light);
+    }
+    .ch-badge {
+      background: var(--gold); color: #fff;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 11px; font-weight: 700;
+      padding: 4px 12px; border-radius: 20px;
+      letter-spacing: 1px; white-space: nowrap;
+    }
+    .ch-badge.theory { background: var(--medium); }
+    .ch-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 20px; font-weight: 700;
+      color: var(--dark); line-height: 1.4;
+    }
+
+    /* ── カード ── */
+    .card {
+      background: var(--beige);
+      border-radius: 10px;
+      padding: 14px 16px;
+      margin-bottom: 12px;
+    }
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px; font-weight: 700;
+      color: var(--gold-dark);
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--gold-light);
+    }
+    .card-pink { background: var(--pink-light); }
+    .card-title-pink { color: var(--pink); border-color: var(--pink); }
+
+    /* ── 箇条書き ── */
+    .b-list { list-style: none; padding: 0; }
+    .b-list li {
+      position: relative;
+      padding-left: 16px;
+      font-size: 13px;
+      line-height: 1.75;
+      margin-bottom: 6px;
+    }
+    .b-list li::before {
+      content: '◆';
+      position: absolute; left: 0;
+      top: 1.5em; transform: translateY(-50%);
+      color: var(--gold); font-size: 7px;
+    }
+    strong.g { color: var(--gold-dark); font-weight: 700; }
+    strong.r { color: #b05050; font-weight: 700; }
+
+    /* ── NG/ポイント行 ── */
+    .point-row {
+      display: flex; align-items: flex-start; gap: 8px;
+      font-size: 13px; color: var(--medium);
+      line-height: 1.65; margin-bottom: 6px;
+    }
+    .mark {
+      background: var(--pink); color: #fff;
+      font-size: 10px; font-weight: 700;
+      padding: 2px 6px; border-radius: 4px;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .mark-ng { background: #b05050; }
+
+    /* ── ハイライトボックス ── */
+    .highlight {
+      background: linear-gradient(135deg, var(--beige), var(--beige-mid));
+      border: 1px solid var(--gold-light);
+      border-radius: 10px;
+      padding: 14px 16px;
+      text-align: center;
+      margin: 12px 0;
+    }
+    .highlight p {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 13px; color: var(--dark);
+      line-height: 2; font-style: italic;
+    }
+    .highlight-pink {
+      background: linear-gradient(135deg, var(--pink-light), #EDE4D7);
+      border-color: var(--pink);
+    }
+    .highlight-pink p { color: #7a4040; }
+
+    /* ── フローボックス ── */
+    .flow { display: flex; flex-direction: column; gap: 0; margin: 10px 0; }
+    .flow-item {
+      background: var(--beige);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+    .flow-item-title {
+      font-size: 13px; font-weight: 600;
+      color: var(--gold-dark); margin-bottom: 2px;
+    }
+    .flow-item-desc { font-size: 12px; color: var(--medium); line-height: 1.6; }
+    .flow-arrow {
+      text-align: center;
+      color: var(--gold-light);
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+    /* ── 3つの約束カード ── */
+    .promise-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      background: var(--beige);
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .promise-num {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--gold); line-height: 1; flex-shrink: 0;
+    }
+    .promise-title {
+      font-size: 14px; font-weight: 600;
+      color: var(--dark); margin-bottom: 2px;
+    }
+    .promise-sub { font-size: 12px; color: var(--medium); line-height: 1.6; }
+
+    /* ── イラスト ── */
+    .illust-img {
+      width: 100%; border-radius: 10px;
+      display: block; margin: 12px 0;
+    }
+
+    /* ── エクササイズブロック ── */
+    .ex-block {
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--beige-mid);
+    }
+    .ex-block:last-child { border-bottom: none; padding-bottom: 0; margin-bottom: 0; }
+    .ex-header {
+      display: flex; align-items: flex-start; gap: 10px;
+      margin-bottom: 8px;
+    }
+    .n-badge {
+      background: var(--dark); color: #fff;
+      font-size: 12px; font-weight: 700;
+      width: 24px; height: 24px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 1px;
+    }
+    .ex-text {
+      font-size: 13px; color: var(--dark);
+      line-height: 1.7; flex: 1;
+    }
+
+    /* ── 画像グリッド ── */
+    .img-grid {
+      display: flex; gap: 6px;
+      margin: 8px 0;
+    }
+    .img-grid img {
+      flex: 1; min-width: 0;
+      border-radius: 6px;
+      object-fit: cover;
+      width: 100%;
+    }
+    .img-single img {
+      width: 100%; border-radius: 8px;
+      margin: 8px 0;
+    }
+    .img-caption {
+      font-size: 11px; color: var(--light);
+      text-align: center; margin-top: 3px;
+    }
+
+    /* ── ポーズブロック ── */
+    .pose-block {
+      margin-bottom: 18px;
+      padding-bottom: 18px;
+      border-bottom: 1px solid var(--beige-mid);
+    }
+    .pose-block:last-child { border-bottom: none; }
+    .pose-header {
+      display: flex; align-items: center; gap: 12px;
+      margin-bottom: 10px;
+    }
+    .pose-circle {
+      width: 44px; height: 44px;
+      border-radius: 50%;
+      background: var(--gold);
+      color: #fff;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .pose-circle.sm { font-size: 12px; }
+    .pose-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 18px; font-weight: 700;
+      color: var(--dark);
+    }
+    .pose-desc {
+      font-size: 13px; color: var(--dark);
+      background: var(--beige); border-radius: 8px;
+      padding: 10px 14px; margin-top: 8px;
+      line-height: 1.75;
+    }
+
+    /* ── 耳・頭皮ほぐしカード ── */
+    .sub-menu-card {
+      background: #fff;
+      border: 1.5px solid var(--gold-light);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+    }
+    .sub-menu-header {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .sub-menu-badge {
+      background: var(--gold); color: #fff;
+      font-size: 10px; font-weight: 700;
+      padding: 2px 10px; border-radius: 20px;
+      letter-spacing: 1px;
+    }
+    .sub-menu-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 15px; font-weight: 700;
+      color: var(--dark);
+    }
+
+    /* ── フッター ── */
+    .doc-footer {
+      text-align: center;
+      font-size: 10px;
+      color: var(--light);
+      padding: 28px 0 12px;
+      border-top: 1px solid var(--beige-mid);
+      margin-top: 40px;
+    }
+
+    /* ── 終わりのメッセージ ── */
+    .end-section {
+      text-align: center;
+      padding: 40px 16px;
+    }
+    .end-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px; font-weight: 700;
+      color: var(--gold-dark);
+      letter-spacing: 2px;
+      line-height: 1.6; margin-bottom: 28px;
+    }
+    .end-body {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 14px; color: var(--dark);
+      line-height: 2.4; margin-bottom: 16px;
+    }
+    .end-accent {
+      font-weight: 700; font-size: 15px;
+      color: var(--gold-dark);
+      border-bottom: 2px solid var(--gold);
+      padding-bottom: 1px;
+    }
+    .end-highlight {
+      background: linear-gradient(135deg, #F5E8E6, #EDE4D7);
+      border-left: 3px solid var(--pink);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .end-highlight p {
+      color: #9A6060; font-weight: 700;
+      font-size: 14px; line-height: 2;
+      font-family: 'Noto Serif JP', serif;
+    }
+    .end-closing {
+      font-size: 13px; color: var(--medium);
+      line-height: 2.2; margin-top: 24px;
+    }
+
+    /* ── 全ページフッター（印刷用） ── */
+    .print-footer { display: none; }
+    @media print {
+      .print-footer {
+        position: fixed;
+        bottom: 0; left: 0; right: 0;
+        padding: 3px 15mm;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9px;
+        color: var(--light);
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+      body { padding-bottom: 12px; }
+    }
+
+    /* ── ロゴ透かし（印刷用） ── */
+    @media print {
+      .watermark {
+        position: fixed;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 340px; height: 340px;
+        background-image: url('images/ロゴ.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        opacity: 0.05;
+        pointer-events: none;
+        z-index: 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
+    }
+
+    /* ── 印刷設定 ── */
+    @media print {
+      @page { size: A4 portrait; margin: 14mm 15mm; }
+      * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
+      body { font-size: 13px; }
+      .cover { min-height: 100vh; page-break-after: always; break-after: page; }
+      .pbreak { page-break-before: always; break-before: page; }
+      .ch-header { page-break-after: avoid; break-after: avoid; }
+      .ex-block { page-break-inside: avoid; break-inside: avoid; }
+      .doc-footer { display: none; }
+      /* メッセージセクション：専用ページで読みやすく */
+      .end-section { padding: 28px 16px 20px; }
+      .end-title { font-size: 20px !important; line-height: 1.5 !important; margin-bottom: 20px !important; }
+      .end-body { font-size: 13px !important; line-height: 2.0 !important; margin-bottom: 10px !important; }
+      .end-highlight { padding: 14px 20px !important; margin: 16px 0 !important; }
+      .end-highlight p { font-size: 13px !important; line-height: 1.9 !important; }
+      .end-closing { font-size: 12px !important; line-height: 2.0 !important; margin-top: 18px !important; }
+      .card { page-break-inside: avoid; break-inside: avoid; }
+      .pose-block { page-break-inside: avoid; break-inside: avoid; }
+      .promise-item { page-break-inside: avoid; break-inside: avoid; }
+      .sub-menu-card { page-break-inside: avoid; break-inside: avoid; }
+      .flow-item { page-break-inside: avoid; break-inside: avoid; }
+      .img-grid { page-break-inside: avoid; break-inside: avoid; }
+
+      /* 画像の最大高さを制限して余白を防ぐ */
+      .illust-img { max-height: 80mm; width: auto; max-width: 100%; display: block; margin: 8px auto; object-fit: contain; }
+      .img-single img { max-height: 58mm; width: auto; max-width: 100%; display: block; margin: 6px auto; object-fit: contain; }
+      .img-grid img { max-height: 50mm; object-fit: contain; }
+      /* 5枚グリッドはさらに小さく */
+      .img-grid:has(img:nth-child(4)) img { max-height: 38mm; }
+      .img-grid:has(img:nth-child(5)) img { max-height: 32mm; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ロゴ透かし（印刷時のみ表示） -->
+<div class="watermark"></div>
+
+<!-- 全ページ固定フッター（印刷時のみ表示） -->
+<div class="print-footer">
+  <span>© 2026 Venus BEAUTE　All Rights Reserved.</span>
+  <span>無断転載禁止</span>
+</div>
+
+<!-- ══════════════ 表紙 ══════════════ -->
+<div class="cover">
+  <img src="images/ロゴ.png" alt="ロゴ" class="cover-logo">
+  <p class="cover-org">愛されヴィーナス塾</p>
+  <p class="cover-brand">VENUS BEAUTE</p>
+  <div class="cover-divider"></div>
+  <h1 class="cover-title">ヴィーナス美顔ヨガ<span class="cover-reg">®</span></h1>
+  <p class="cover-sub">講座資料</p>
+  <p class="cover-catch">お顔を変えて、もっと自分らしく輝く。<br>一生若返るセルフ整形メソッドで<br>あなたの未来のお顔をつくる</p>
+  <p class="cover-copy">© 2026 Venus BEAUTE All Rights Reserved. 無断転載禁止</p>
+</div>
+
+<!-- ══════════════ 目次 ══════════════ -->
+<div class="section pbreak" style="padding-top:32px;">
+  <div class="ch-header">
+    <span class="ch-badge theory">CONTENTS</span>
+    <h2 class="ch-title">目次</h2>
+  </div>
+  <p class="toc-section-label">理論編 — THEORY</p>
+  <div class="toc-item"><span class="toc-num">第1章</span><span>表情筋とは？</span></div>
+  <div class="toc-item"><span class="toc-num">第2章</span><span>ヴィーナス美顔ヨガとは</span></div>
+  <div class="toc-item"><span class="toc-num">第3章</span><span>ゆるめる × 整える × 鍛える</span></div>
+  <div class="toc-item"><span class="toc-num">第4章</span><span>変化が起こる理由</span></div>
+  <div class="toc-item"><span class="toc-num">第5章</span><span>心とお顔の関係</span></div>
+  <div class="toc-item"><span class="toc-num">第6章</span><span>三つの約束</span></div>
+  <p class="toc-section-label" style="margin-top:20px;">実践編 — PRACTICE</p>
+  <div class="toc-item"><span class="toc-num">第1章</span><span>基本姿勢</span></div>
+  <div class="toc-item"><span class="toc-num">第2章</span><span>舌の正しい位置</span></div>
+  <div class="toc-item"><span class="toc-num">第3章</span><span>上半身のほぐし＆ストレッチ（全13種）</span></div>
+  <div class="toc-item"><span class="toc-num">第4章</span><span>お顔の筋膜ほぐし（耳ほぐし・頭皮ほぐし・顔の各部位ほぐし）</span></div>
+  <div class="toc-item"><span class="toc-num">第5章</span><span>ヴィーナス美顔ヨガ 基本ポーズ（全7種）</span></div>
+  <div class="toc-item" style="border-bottom:none;"><span class="toc-num">約束</span><span>ヴィーナスの3つの約束・メッセージ</span></div>
+</div>
+
+<!-- ══════════════ 理論編 表紙 ══════════════ -->
+<div class="section pbreak">
+  <div class="sec-cover">
+    <p class="sec-cover-label">THEORY BOOK</p>
+    <h2 class="sec-cover-title">理論編</h2>
+    <p class="sec-cover-desc">お顔は、人生の鏡。<br>正しく知ることが、正しい変化への第一歩。</p>
+    <div class="sec-cover-tags">
+      <span class="sec-cover-tag">第1章〜第6章</span>
+    </div>
+  </div>
+
+  <!-- 第1章 表情筋とは？ -->
+  <div class="ch-header">
+    <span class="ch-badge theory">第1章</span>
+    <h2 class="ch-title">表情筋とは？</h2>
+  </div>
+  <img src="images/表情筋イラスト.jpg" alt="表情筋イラスト" class="illust-img">
+  <div class="card">
+    <p class="card-title">表情筋の特徴</p>
+    <ul class="b-list">
+      <li>全身に<strong class="g">約600種類</strong>の筋肉があり、表情筋はその一部</li>
+      <li>顔には<strong class="g">30種類以上</strong>の表情筋がある</li>
+      <li>一般的な筋肉は骨と骨をつなぐが、<strong class="g">表情筋は皮膚についている</strong></li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="card-title">なぜケアが必要なのか</p>
+    <ul class="b-list">
+      <li>骨でなく皮膚についているため、<strong class="g">たるみやすく、崩れやすい</strong></li>
+      <li>正しい方法でゆるめ・目覚めさせ・鍛えることが大切</li>
+      <li>間違ったケアは逆効果になることも</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <p>表情筋を<strong>正しく</strong>ゆるめ、整え、鍛えること。<br>それがヴィーナス美顔ヨガの出発点。</p>
+  </div>
+</div>
+
+<!-- 第2章 ヴィーナス美顔ヨガとは -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge theory">第2章</span>
+    <h2 class="ch-title">ヴィーナス美顔ヨガとは</h2>
+  </div>
+  <img src="images/広頚筋イラスト.jpg" alt="広頚筋イラスト" class="illust-img">
+  <div class="card">
+    <p class="card-title">全身でつながるメソッド</p>
+    <ul class="b-list">
+      <li>顔の表情筋は<strong class="g">頭皮・首・鎖骨・肩・胸</strong>とつながっている</li>
+      <li>顔だけでなく<strong class="g">上半身全体</strong>からアプローチ</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="card-title">正しいアプローチの順番</p>
+    <div class="flow" style="margin-top:8px;">
+      <div class="flow-item">
+        <div class="flow-item-title">① 上半身をほぐす</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <div class="flow-item-title">② 首・頭皮をゆるめる</div>
+      </div>
+      <div class="flow-arrow">↓</div>
+      <div class="flow-item">
+        <div class="flow-item-title">③ 表情筋を整え・鍛える（約20ポーズ）</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 第3章 ゆるめる×整える×鍛える -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge theory">第3章</span>
+    <h2 class="ch-title">ゆるめる × 整える × 鍛える</h2>
+  </div>
+  <div class="card">
+    <p class="card-title">🌿 ゆるめる</p>
+    <p style="font-size:13px;line-height:1.8;">固まった表情筋や首・頭皮の緊張をほどく。ゆるめることが変化の第一歩。</p>
+  </div>
+  <div class="card">
+    <p class="card-title">✦ 整える</p>
+    <p style="font-size:13px;line-height:1.8;">左右のバランスを整え、歪みをリセット。本来の骨格・筋肉の位置に戻す。</p>
+  </div>
+  <div class="card">
+    <p class="card-title">✨ 鍛える</p>
+    <p style="font-size:13px;line-height:1.8;">正しい方法で表情筋を目覚めさせ、引き上げる力を育てる。</p>
+  </div>
+  <div class="highlight">
+    <p>この3つのバランスが<strong>変化を加速させる</strong></p>
+  </div>
+</div>
+
+<!-- 第4章 変化が起こる理由 -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge theory">第4章</span>
+    <h2 class="ch-title">変化が起こる理由</h2>
+  </div>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="flow-item-title">身体がゆるむ</div>
+      <div class="flow-item-desc">首・肩・胸まわりの緊張がほどける</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-item-title">血流・リンパが改善される</div>
+      <div class="flow-item-desc">顔まわりに栄養・酸素が届きやすくなる</div>
+    </div>
+    <div class="flow-arrow">↓</div>
+    <div class="flow-item">
+      <div class="flow-item-title">表情筋が本来の力を取り戻す</div>
+      <div class="flow-item-desc">フェイスライン・頬・目元に変化が現れる</div>
+    </div>
+  </div>
+  <div class="highlight" style="margin-top:14px;">
+    <p>ヴィーナス美顔ヨガは<strong>本来の美しさを引き出す</strong>メソッド</p>
+  </div>
+</div>
+
+<!-- 第5章 心とお顔の関係 -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge theory">第5章</span>
+    <h2 class="ch-title">心とお顔の関係</h2>
+  </div>
+  <div class="card">
+    <p class="card-title">心が下を向くと、顔も下を向く</p>
+    <ul class="b-list">
+      <li>気持ちが落ちると表情も落ちる</li>
+      <li>下を向く習慣が<strong class="g">顔の下垂</strong>につながる</li>
+      <li>感情・姿勢・表情は密接につながっている</li>
+    </ul>
+  </div>
+  <div class="card">
+    <p class="card-title">ヴィーナス美顔ヨガの理念</p>
+    <ul class="b-list">
+      <li><strong class="g">自分を褒めること・愛すること</strong>が美の根本</li>
+      <li>顔を上げることは、<strong class="g">自分を大切にすること</strong></li>
+      <li>内側の変化が外側の変化を生む</li>
+    </ul>
+  </div>
+  <div class="highlight">
+    <p>お顔を上げて、<strong>自分らしく輝くことを選ぼう。</strong></p>
+  </div>
+</div>
+
+<!-- 第6章 三つの約束 -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge theory">第6章</span>
+    <h2 class="ch-title">三つの約束</h2>
+  </div>
+  <p style="font-size:12px;color:var(--medium);text-align:center;margin-bottom:16px;letter-spacing:1px;">変化を手に入れるための大切な約束</p>
+
+  <div class="promise-item">
+    <div class="promise-num">①</div>
+    <div>
+      <p class="promise-title">継続すること</p>
+      <p class="promise-sub">毎日完璧にやる必要はない。<strong>1日5分でも続けること</strong>に意味がある。変化はある日突然、気づくようにやってくる。「続けてきた自分」が一番の財産になる。</p>
+    </div>
+  </div>
+  <div class="promise-item">
+    <div class="promise-num">②</div>
+    <div>
+      <p class="promise-title">自己流でやらないこと</p>
+      <p class="promise-sub">約20ポーズには<strong>設計された順番</strong>がある。間違った方法はシワが深くなることも。ゆるめてから鍛える、という流れが重要。</p>
+    </div>
+  </div>
+  <div class="promise-item">
+    <div class="promise-num">③</div>
+    <div>
+      <p class="promise-title">自分を愛し、褒めること</p>
+      <p class="promise-sub">鏡を見るとき、<strong>いいところを探す習慣</strong>をつける。小さな変化を認め、自分を大切にする。あなたのお顔は、あなたの歴史。</p>
+    </div>
+  </div>
+  <div class="highlight" style="margin-top:4px;">
+    <p>完璧でなくていい。<strong>やめないことが、変化をつくる。</strong></p>
+  </div>
+</div>
+
+<!-- ══════════════ 実践編 表紙 ══════════════ -->
+<div class="section pbreak">
+  <div class="sec-cover" style="background:linear-gradient(135deg,#dce8ef,#c5d8e3);">
+    <p class="sec-cover-label" style="color:#5a8fa8;">PRACTICE SESSION</p>
+    <h2 class="sec-cover-title" style="color:#3a5a6e;">実践編</h2>
+    <p class="sec-cover-desc" style="color:#5a7a8a;">理論を身体で体験しよう。<br>約20ポーズで、お顔の本来の力を引き出す。</p>
+    <div class="sec-cover-tags">
+      <span class="sec-cover-tag" style="background:#7aaabb;">ゆるめる</span>
+      <span class="sec-cover-tag" style="background:#7aaabb;">整える</span>
+      <span class="sec-cover-tag" style="background:#7aaabb;">鍛える</span>
+    </div>
+  </div>
+
+  <!-- 第1章 基本姿勢 -->
+  <div class="ch-header">
+    <span class="ch-badge">第1章</span>
+    <h2 class="ch-title">基本姿勢 — 美の土台となる正しい姿勢</h2>
+  </div>
+  <div class="img-grid">
+    <img src="images/基本姿勢1.jpg" alt="基本姿勢1">
+    <img src="images/基本姿勢2.jpg" alt="基本姿勢2">
+  </div>
+  <div class="card" style="margin-top:10px;">
+    <p class="card-title">正しい姿勢のポイント</p>
+    <ul class="b-list">
+      <li>頭は糸で上から引き上げられているイメージ</li>
+      <li>顎を軽く引く（引きすぎない）</li>
+      <li>肩の力を抜き、自然に落とす</li>
+      <li>胸を開く / 背骨を縦一直線に保つ</li>
+    </ul>
+  </div>
+</div>
+
+<!-- 第2章 舌の正しい位置 -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge">第2章</span>
+    <h2 class="ch-title">舌の正しい位置</h2>
+  </div>
+  <p style="font-size:13px;color:var(--medium);margin-bottom:10px;">顔のたるみ予防は「舌の位置」から</p>
+  <div class="img-grid">
+    <img src="images/舌の正しい位置1.jpg" alt="舌の位置1">
+    <img src="images/舌の正しい位置2.jpg" alt="舌の位置2">
+  </div>
+  <div class="card card-pink" style="margin-top:10px;">
+    <p class="card-title card-title-pink">避けるべきNG状態</p>
+    <div class="point-row">
+      <span class="mark mark-ng">NG</span>
+      <span>舌が下に落ちている / 口呼吸になっている</span>
+    </div>
+  </div>
+  <div style="display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;">
+    <span style="background:var(--beige);border:1px solid var(--gold-light);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--gold-dark);">フェイスライン引き上げ</span>
+    <span style="background:var(--beige);border:1px solid var(--gold-light);border-radius:20px;padding:4px 14px;font-size:12px;color:var(--gold-dark);">二重あご予防</span>
+  </div>
+</div>
+
+<!-- 第3章 上半身のほぐし 概要 -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge">第3章</span>
+    <h2 class="ch-title">上半身のほぐし＆ストレッチ</h2>
+  </div>
+  <div class="card">
+    <p class="card-title">目的・効果</p>
+    <ul class="b-list">
+      <li>肩こり改善 ／ 猫背予防</li>
+      <li>広頚筋の活性化</li>
+      <li>リンパの流れを整える</li>
+    </ul>
+  </div>
+  <div class="card card-pink">
+    <p class="card-title card-title-pink">実施上のポイント</p>
+    <div class="point-row"><span class="mark">!</span><span>肩をすくめない</span></div>
+    <div class="point-row"><span class="mark">!</span><span>呼吸を止めない</span></div>
+    <div class="point-row" style="margin-bottom:0"><span class="mark">!</span><span>痛気持ちいい範囲で行う</span></div>
+  </div>
+  <div class="highlight"><p>全13エクササイズを<br>順番どおりに丁寧に行いましょう</p></div>
+
+  <!-- エクササイズ ①〜⑦ -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold-dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gold-light);">エクササイズ ①〜⑦</h3>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">1</span><p class="ex-text">肩の高さを比較し、下がっている側をチェック</p></div>
+    <div class="img-single"><img src="images/第3章(1).jpg" alt="①"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">2</span><p class="ex-text">下がった側の脇を掴み、指先を肩に置いて大きく15回回す</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(2)-1.jpg" alt="② step1">
+      <img src="images/第3章(2)-2.jpg" alt="② step2">
+      <img src="images/第3章(2)-3.jpg" alt="② step3">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">3</span><p class="ex-text">腕を後ろに組み、鼻から4秒吸いながら上げ、吐きながら下ろす（15回）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(3)-1.jpg" alt="③ はじめ">
+      <img src="images/第3章(3)-2.jpg" alt="③ おわり">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">4</span><p class="ex-text">胸の前で肘を水平に上げ、肩甲骨を寄せるように後ろへ15回引く</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(4)-1.jpg" alt="④ はじめ">
+      <img src="images/第3章(4)-2.jpg" alt="④ おわり">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">5</span><p class="ex-text">斜め45度に腕を上げ下ろし（15回）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(5)-1.jpg" alt="⑤ はじめ">
+      <img src="images/第3章(5)-2.jpg" alt="⑤ おわり">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">6</span><p class="ex-text">下がった側の脇を掴み、肘を大きく15回回す</p></div>
+    <div class="img-single"><img src="images/第3章(6).jpg" alt="⑥"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">7</span><p class="ex-text">親指を脇のくぼみ、4指を肩甲骨外側に置き、後ろに15回回す</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(7)-1.jpg" alt="⑦ はじめ">
+      <img src="images/第3章(7)-2.jpg" alt="⑦ おわり">
+    </div>
+  </div>
+
+  <!-- エクササイズ ⑧〜⑬ -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold-dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gold-light);">エクササイズ ⑧〜⑬</h3>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">8</span><p class="ex-text">熊手にして前鋸筋を掻き出すようにほぐす（10回）</p></div>
+    <div class="img-single"><img src="images/第3章(8).jpg" alt="⑧"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">9</span><p class="ex-text">頭の後ろで肘を持ち、鼻から4秒吸って脇を伸ばしながら息を吐く（3回）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(9)-1.jpg" alt="⑨ はじめ">
+      <img src="images/第3章(9)-2.jpg" alt="⑨ おわり">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">10</span><p class="ex-text">両手重ねて鎖骨下の大胸筋を横に10回、上下に10回ほぐす</p></div>
+    <div class="img-single"><img src="images/第3章(10).jpg" alt="⑩"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">11</span><p class="ex-text">鎖骨を3箇所、人差し指と中指で捉えてほぐす（各10秒）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(11)-1.jpg" alt="⑪ step1">
+      <img src="images/第3章(11)-2.jpg" alt="⑪ step2">
+      <img src="images/第3章(11)-3.jpg" alt="⑪ step3">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">12</span><p class="ex-text">息を4秒吸いながら鎖骨下を固定し、吐きながら頭を後ろに倒す（3回）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(12)-1.jpg" alt="⑫ はじめ">
+      <img src="images/第3章(12)-2.jpg" alt="⑫ 頭を後ろへ">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">13</span><p class="ex-text">耳角を引っ張り胸鎖乳突筋を出し、耳下の付け根から3ヶ所を横に揺らしてほぐす（各10秒）</p></div>
+    <div class="img-grid">
+      <img src="images/第3章(13)-1.jpg" alt="⑬ step1">
+      <img src="images/第3章(13)-2.jpg" alt="⑬ step2">
+      <img src="images/第3章(13)-3.jpg" alt="⑬ step3">
+    </div>
+  </div>
+</div>
+
+<!-- 第4章 お顔の筋膜ほぐし -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge">第4章</span>
+    <h2 class="ch-title">お顔の筋膜ほぐし</h2>
+  </div>
+  <div class="card">
+    <p class="card-title">目的・効果</p>
+    <ul class="b-list">
+      <li>筋膜の癒着をゆるめる</li>
+      <li>血流促進・むくみ改善</li>
+      <li>可動域を広げる</li>
+    </ul>
+  </div>
+  <div class="card card-pink">
+    <p class="card-title card-title-pink">実施上のポイント</p>
+    <div class="point-row"><span class="mark">!</span><span>強く押しすぎない</span></div>
+    <div class="point-row"><span class="mark">!</span><span>ゆっくり呼吸しながら行う</span></div>
+    <div class="point-row" style="margin-bottom:0"><span class="mark">!</span><span>痛みが出ない範囲で実施</span></div>
+  </div>
+
+  <!-- お顔ほぐしのやり方 -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:14px;color:var(--medium);margin:18px 0 10px;display:flex;align-items:center;gap:8px;">
+    <span style="display:inline-block;width:3px;height:16px;background:var(--gold);border-radius:2px;"></span>お顔ほぐしのやり方
+  </h3>
+  <div class="sub-menu-card">
+    <div class="sub-menu-header">
+      <span class="sub-menu-badge">1</span>
+      <span class="sub-menu-title">耳ほぐし</span>
+    </div>
+    <ul class="b-list">
+      <li>耳全体を優しくつまむ</li>
+      <li>上・横・下へゆっくり引っ張る</li>
+      <li>耳をくるくる回す</li>
+      <li>耳の付け根を優しくほぐす</li>
+    </ul>
+  </div>
+  <div class="sub-menu-card">
+    <div class="sub-menu-header">
+      <span class="sub-menu-badge">2</span>
+      <span class="sub-menu-title">頭皮ほぐし</span>
+    </div>
+    <ul class="b-list">
+      <li>指の腹で頭皮をつかむように動かす</li>
+      <li>前頭部・側頭部・後頭部をまんべんなく</li>
+      <li>円を描くように優しく動かす</li>
+    </ul>
+  </div>
+
+  <!-- 顔の各部位ほぐし -->
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold-dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gold-light);">顔の各部位ほぐし ①〜④</h3>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">1</span><p class="ex-text">親指をカギ型にしてあご下へ。5ヶ所（真ん中・口角下制筋・顎の真ん中・エラ・内側翼突筋）を各10秒</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(1)-1.jpg" alt="⑴ step1">
+      <img src="images/第4章(1)-2.jpg" alt="⑴ step2">
+      <img src="images/第4章(1)-3.jpg" alt="⑴ step3">
+      <img src="images/第4章(1)-4.jpg" alt="⑴ step4">
+      <img src="images/第4章(1)-5.jpg" alt="⑴ step5">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">2</span><p class="ex-text">口角下制筋を人差し指カギ型でアゴ先に向かって小さく優しくほぐす（3ヶ所10秒ずつ）</p></div>
+    <div class="img-single"><img src="images/第4章(2).jpg" alt="⑵"></div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">3</span><p class="ex-text">笑筋・頬筋をグーの平らな所で、口角の横から咬筋まで3ヶ所を小さく揺らしてほぐす</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(3)-1.jpg" alt="⑶ step1">
+      <img src="images/第4章(3)-2.jpg" alt="⑶ step2">
+      <img src="images/第4章(3)-3.jpg" alt="⑶ step3">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">4</span><p class="ex-text">上唇尾翼挙筋を鼻側面に中指側面を当てて、人差し指でVを作りながらほぐす（10秒）</p></div>
+    <div class="img-single"><img src="images/第4章(4).jpg" alt="⑷"></div>
+  </div>
+
+  <h3 style="font-family:'Noto Serif JP',serif;font-size:15px;color:var(--gold-dark);margin:20px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--gold-light);">顔の各部位ほぐし ⑤〜⑧</h3>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">5</span><p class="ex-text">頬骨下を人差し指カギ型で4ヶ所、小さく微振動させてほぐす（各10秒）</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(5)-1.jpg" alt="⑸ step1">
+      <img src="images/第4章(5)-2.jpg" alt="⑸ step2">
+      <img src="images/第4章(5)-3.jpg" alt="⑸ step3">
+      <img src="images/第4章(5)-4.jpg" alt="⑸ step4">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">6</span><p class="ex-text">眼輪筋を4指で眼球の骨際に当てて優しくほぐし、眉下の骨に4指を当てて下から持ち上げるようにほぐす</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(6)-1.jpg" alt="⑹ step1">
+      <img src="images/第4章(6)-2.jpg" alt="⑹ step2">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">7</span><p class="ex-text">チョキの指で耳の付け根を捉えて後ろ回し10回、その後上・横・下に引っ張り折りたたんで後ろに10回回す</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(7)-1.jpg" alt="⑺ step1">
+      <img src="images/第4章(7)-2.jpg" alt="⑺ step2">
+    </div>
+  </div>
+
+  <div class="ex-block">
+    <div class="ex-header"><span class="n-badge">8</span><p class="ex-text">側頭筋を斜め上に頭皮を引き上げるようにほぐし、頭頂部の帽状腱膜を両手で挟むようにほぐす</p></div>
+    <div class="img-grid">
+      <img src="images/第4章(8)-1.jpg" alt="⑻ step1">
+      <img src="images/第4章(8)-2.jpg" alt="⑻ step2">
+      <img src="images/第4章(8)-3.jpg" alt="⑻ step3">
+    </div>
+  </div>
+</div>
+
+<!-- 第5章 基本ポーズ -->
+<div class="section">
+  <div class="ch-header">
+    <span class="ch-badge">第5章</span>
+    <h2 class="ch-title">ヴィーナス美顔ヨガ 基本ポーズ</h2>
+  </div>
+  <div class="card">
+    <p class="card-title">目的・効果</p>
+    <ul class="b-list">
+      <li>たるみ改善・フェイスライン引き上げ</li>
+      <li>ほうれい線予防・口角アップ</li>
+    </ul>
+  </div>
+  <div class="card card-pink">
+    <p class="card-title card-title-pink">実施上のポイント</p>
+    <div class="point-row"><span class="mark">!</span><span>顎に力を入れない</span></div>
+    <div class="point-row"><span class="mark">!</span><span>首を長く保つ</span></div>
+    <div class="point-row"><span class="mark">!</span><span>呼吸を止めない</span></div>
+    <div class="point-row" style="margin-bottom:0"><span class="mark">!</span><span>鏡を見て左右差を確認する</span></div>
+  </div>
+  <div class="highlight"><p>正しく行えば、年齢に関係なく<br>お顔は変わります</p></div>
+
+  <div style="margin-top:20px;">
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>ア</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ①</p>
+          <p class="pose-name">アのポーズ</p>
+        </div>
+      </div>
+      <div class="img-grid">
+        <img src="images/第5章(1)-1.jpg" alt="アのポーズ step1">
+        <img src="images/第5章(1)-2.jpg" alt="アのポーズ step2">
+      </div>
+      <div class="pose-desc">人差し指と中指2本を縦に入れて口角を反対の指で軽くこめかみ方向に上げ、<strong>20〜30秒キープ</strong></div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>イ</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ②</p>
+          <p class="pose-name">イのポーズ</p>
+        </div>
+      </div>
+      <div class="img-single"><img src="images/第5章(2).jpg" alt="イのポーズ"></div>
+      <div class="pose-desc">人差し指を口角に置き、あごやお顔全体を脱力しながら横に引く。<strong>20〜30秒キープ</strong>（口角は歯に付かないよう注意）</div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>ウ</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ③</p>
+          <p class="pose-name">ウのポーズ</p>
+        </div>
+      </div>
+      <div class="img-single"><img src="images/第5章(3).jpg" alt="ウのポーズ"></div>
+      <div class="pose-desc">ろうそくを吹き消すようなチューの口を作り、小指1本入るくらい開けながら口角を寄せるように丸い形で<strong>20〜30秒キープ</strong></div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>エ</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ④</p>
+          <p class="pose-name">エのポーズ</p>
+        </div>
+      </div>
+      <div class="img-single"><img src="images/第5章(4).jpg" alt="エのポーズ"></div>
+      <div class="pose-desc">息を4秒吸って、吐きながら舌を脱力しながら下に伸ばす。<strong>3回繰り返す</strong></div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>オ</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ⑤</p>
+          <p class="pose-name">オのポーズ</p>
+        </div>
+      </div>
+      <div class="img-single"><img src="images/第5章(5).jpg" alt="オのポーズ"></div>
+      <div class="pose-desc">息を吸って鼻の下を伸ばしながら口を楕円形に縦に伸ばし、目線は上を見ながら息を吐く。<strong>3回繰り返す</strong></div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle"><span>ヒ</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ⑥</p>
+          <p class="pose-name">ヒのポーズ</p>
+        </div>
+      </div>
+      <div class="img-grid">
+        <img src="images/第5章(6)-1.jpg" alt="ヒ はじめ">
+        <img src="images/第5章(6)-2.jpg" alt="ヒ キープ">
+      </div>
+      <div class="pose-desc">人差し指1本分口を開け、反対の手で口角を目尻側に上げ、頬が上がる意識で<strong>20〜30秒キープ</strong></div>
+    </div>
+
+    <div class="pose-block">
+      <div class="pose-header">
+        <div class="pose-circle sm"><span>目元</span></div>
+        <div>
+          <p style="font-size:11px;color:var(--light);">基本ポーズ ⑦</p>
+          <p class="pose-name">目元パッチリポーズ</p>
+        </div>
+      </div>
+      <div class="img-grid">
+        <img src="images/第5章(8)-1.jpg" alt="目元 step1">
+        <img src="images/第5章(8)-2.jpg" alt="目元 step2">
+        <img src="images/第5章(8)-3.jpg" alt="目元 step3">
+        <img src="images/第5章(8)-4.jpg" alt="目元 step4">
+      </div>
+      <div class="pose-desc">眉毛が動かないように固定して薄目をし、力を入れながら閉じる。パチッと上まぶたに意識して開く動作を<strong>20〜30秒繰り返す</strong></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══════════════ ヴィーナスの約束 ══════════════ -->
+<div class="section pbreak">
+  <div class="ch-header">
+    <span class="ch-badge" style="background:var(--gold-dark);">約束</span>
+    <h2 class="ch-title">ヴィーナスの3つの約束</h2>
+  </div>
+  <p style="font-size:12px;color:var(--medium);text-align:center;margin-bottom:16px;letter-spacing:1px;">変化を手に入れるための大切な約束</p>
+  <div class="promise-item">
+    <div class="promise-num">1</div>
+    <div>
+      <p class="promise-title">継続すること</p>
+      <p class="promise-sub">毎日完璧にやる必要はない。<strong>1日5分でも続けること</strong>に意味がある。変化はある日突然、気づくようにやってくる。「続けてきた自分」が一番の財産になる。</p>
+    </div>
+  </div>
+  <div class="promise-item">
+    <div class="promise-num">2</div>
+    <div>
+      <p class="promise-title">自己流でやらないこと</p>
+      <p class="promise-sub">約20ポーズには<strong>設計された順番</strong>がある。間違った方法はシワが深くなることも。ゆるめてから鍛える、という流れが重要。</p>
+    </div>
+  </div>
+  <div class="promise-item">
+    <div class="promise-num">3</div>
+    <div>
+      <p class="promise-title">自分を愛し、褒めること</p>
+      <p class="promise-sub">鏡を見るとき、<strong>いいところを探す習慣</strong>をつける。小さな変化を認め、自分を大切にする。あなたのお顔は、あなたの歴史。</p>
+    </div>
+  </div>
+  <div class="highlight" style="margin-top:16px;">
+    <p>今日の自分をしっかり褒めて認めてあげましょう！<br>その小さな積み重ねが、<br>あなたの未来のお顔をつくります</p>
+  </div>
+</div>
+
+<!-- ══════════════ 終わりのメッセージ ══════════════ -->
+<div class="section pbreak">
+  <div class="end-section">
+    <h2 class="end-title">愛されヴィーナスの<br>あなたへ</h2>
+
+    <p class="end-body">ここまでテキストを読んでくださり、本当にありがとうございます。<br>ヴィーナス美顔ヨガは、ただお顔を動かすだけのものではありません。</p>
+    <p class="end-body">お顔を大切にすることは<br><span class="end-accent">自分自身を大切にすること。</span></p>
+    <p class="end-body">忙しい毎日の中でつい後回しになってしまう「自分」。<br>でも本当は、<span class="end-accent">女性は何歳からでも美しくなれます。</span></p>
+
+    <div class="end-highlight">
+      <p>表情が変わると心が変わります。<br>心が変わると人生が変わります。</p>
+    </div>
+
+    <p class="end-body">鏡を見るたびに少しずつ自分を好きになっていく。<br>そんな未来を、一緒に育てていきましょう。</p>
+    <p class="end-body">あなたが<span class="end-accent">自分を愛し、輝く女性になれること。</span><br>それがヴィーナス美顔ヨガの願いです。</p>
+    <p class="end-closing">6ヶ月後、1年後　今よりもっと素敵な笑顔のあなたに<br>出会えることを楽しみにしています。</p>
+
+    <div style="margin-top:20px;">
+      <p style="font-family:'Noto Serif JP',serif;font-size:12px;color:var(--medium);letter-spacing:3px;">愛されヴィーナス塾</p>
+      <div style="width:40px;height:1px;background:var(--gold);margin:8px auto;"></div>
+      <p style="font-family:'Noto Serif JP',serif;font-size:11px;letter-spacing:5px;color:var(--gold);">VENUS BEAUTE</p>
+    </div>
+  </div>
+</div>
+
+<!-- フッター -->
+<div class="doc-footer">
+  © 2026 Venus BEAUTE All Rights Reserved. &nbsp;|&nbsp; 無断転載禁止
+</div>
+
+<script>
+  // ?print=1 で開かれた場合、フォント読み込み後に自動印刷
+  if (new URLSearchParams(window.location.search).get('print') === '1') {
+    window.addEventListener('load', function () {
+      setTimeout(function () { window.print(); }, 800);
+    });
+  }
+</script>
+</body>
+</html>
